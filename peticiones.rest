@@ -33,3 +33,6 @@ PUT http://localhost:3000/api/sponsors
 
 ###
 DELETE http://localhost:3000/api/sponsors/offers
+
+###
+POST http://localhost:3000/api/sponsors
