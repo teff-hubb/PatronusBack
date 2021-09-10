@@ -1,0 +1,35 @@
+### 
+GET http://localhost:3000/api/athletes
+
+###
+GET http://localhost:3000/api/athletes/offers
+
+###
+GET http://localhost:3000/api/athletes/portfolio
+
+###
+POST http://localhost:3000/api/athletes/register
+
+###
+POST http://localhost:3000/api/athletes/login
+
+###
+PUT http://localhost:3000/api/athletes/
+
+###
+DELETE http://localhost:3000/api/athletes/offers
+
+###
+GET http://localhost:3000/api/sponsors/offers
+
+###
+POST http://localhost:3000/api/sponsors/register
+
+###
+post http://localhost:3000/api/sponsors/login
+
+###
+PUT http://localhost:3000/api/sponsors
+
+###
+DELETE http://localhost:3000/api/sponsors/offers
