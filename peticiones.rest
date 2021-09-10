@@ -1,0 +1,16 @@
+### 
+GET http://localhost:3000/api/deportistas
+
+### 
+GET http://localhost:3000/api/deportistas/6
+
+
+### 
+GET http://localhost:3000/api/deportistas/inveritos
+
+###
+PUT http://localhost:3000/api/sponsors
+
+
+###
+POST http://localhost:3000/api/sponsors
