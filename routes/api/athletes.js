@@ -1,41 +1,37 @@
 const router = require('express').Router();
 
-// GET localhost:3000/api/athletes
-router.get('/', (req, res) => {
-    res.end('ruta get deportista funcionando')
-});
 
-// GET localhost:3000/api/athletes/offers
-router.get('/offers', (req, res) => {
-    res.end('ruta get ofertas funcionando')
-});
+const { getAll, getOffers, editProfile, getById, getAllOffers } = require('../../models/athlete.model');
 
-// GET localhost:3000/api/athletes/porfolio
-router.get('/portfolio', (req, res) => {
-    res.end('ruta get portfolio funcionando')
-});
 
-// POST localhost:3000/api/deportistas/register
-router.post('/register', (req, res) => {
-    res.end('ruta post register funcionando')
-});
+// ver todos
 
-// POST localhost:3000/api/deportistas/login
-router.post('/login', (req, res) => {
-    res.end('ruta post login funcionando')
-});
+router.get('/', async (req, res) => {
+    try {
+        const result = await getAll();
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message})
+    }
+})
 
-// PUT localhost:3000/api/deportistas
-router.put('/', (req, res) => {
-    res.end('ruta put atletes funcionando')
-});
 
-// DELETE localhost:3000/api/deportistas/ofertas
-router.delete('/offers', (req, res) => {
-    res.end('ruta delete funcionando')
+// ver todas las ofertas recibidas
+
+router.get('/offers', async (req, res) => {
+    const result = await getAllOffers();
+    res.json(result);
 });
 
 
+// editar perfil
+
+router.put('/:idAthlete', async (req, res) => {
+    const idAthlete = req.params.idAthlete;
+    const result = await editProfile(idAthlete, req.body);
+    const athlete = await getById(idAthlete);
+    res.json(athlete);
+})
 
 
 

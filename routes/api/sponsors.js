@@ -15,6 +15,12 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     res.end('ruta post login funcionando')
 });
+// deportistas invertidos
+
+router.get('/myathletes', (req, res) => {
+    res.end('Ruta myathletes funcionaa')
+});
+
 
 // PUT localhost:3000/api/sponsors
 router.put('/', (req, res) => {
@@ -25,6 +31,8 @@ router.put('/', (req, res) => {
 router.delete('/offers', (req, res) => {
     res.end('ruta delete funcionando')
 });
+
+
 
 
 
