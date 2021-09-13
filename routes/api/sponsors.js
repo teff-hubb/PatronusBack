@@ -1,36 +1,52 @@
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById } = require('../../models/sponsor.model');
+
 const router = require('express').Router();
 
 
-// GET localhost:3000/api/sponsors/ofertas
 router.get('/offers', (req, res) => {
     res.end('ruta get offers funcionando')
 });
 
-// POST localhost:3000/api/sponsors/register
-router.post('/register', (req, res) => {
-    res.end('ruta post register funcionando')
-});
 
-// POST localhost:3000/api/sponsors/login
-router.post('/login', (req, res) => {
-    res.end('ruta post login funcionando')
-});
 // deportistas invertidos
 
-router.get('/myathletes', (req, res) => {
-    res.end('Ruta myathletes funcionaa')
+router.get('/myathletes/:idSponsor', async (req, res) => {
+   const idSponsor = req.params.idSponsor;
+   const result = await getMyAthletes(idSponsor);
+   res.json(result);
 });
 
 
-// PUT localhost:3000/api/sponsors
-router.put('/', (req, res) => {
-    res.end('ruta put  funcionando')
+
+// todas las ofertas realizadas 
+
+router.get('/myAllOffers/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getMyAllOffers(idSponsor);
+    res.json(result);
+})
+
+
+// todas las ofertas rechazadas 
+
+router.get('/myOffersRejecteds/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getMyOffersRejecteds(idSponsor);
+    res.json(result);
+})
+
+
+// editar perfil 
+
+router.put('/profile/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await editProfile(idSponsor, req.body);
+    const sponsor = await getById(idSponsor);
+    res.json(sponsor);
 });
 
-// DELETE localhost:3000/api/sponsors/ofertas
-router.delete('/offers', (req, res) => {
-    res.end('ruta delete funcionando')
-});
+
+
 
 
 
