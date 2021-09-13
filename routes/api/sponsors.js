@@ -7,6 +7,12 @@ router.get('/', (req, res) => {
 });
 
 
+// deportistas invertidos
+
+router.get('/myathletes', (req, res) => {
+    res.end('Ruta myathletes funcionaa')
+});
+
 
 // PUT 
 
@@ -21,6 +27,8 @@ router.put('/', (req, res) => {
 router.post('/', (req, res) => {
     res.end('Ruta POST funcionando');
 })
+
+
 
 
 

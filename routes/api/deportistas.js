@@ -1,4 +1,4 @@
-const router = require('./sponsors');
+const router = require('express').Router();
 
 
 router.get('/:idDeportista', (req, res) => {

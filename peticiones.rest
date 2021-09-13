@@ -1,12 +1,61 @@
 ### 
-GET http://localhost:3000/api/deportistas
+GET http://localhost:3000/api/athletes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+### 
+GET http://localhost:3000/api/athletes/offers
+
 
 ### 
-GET http://localhost:3000/api/deportistas/6
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "email": "amparillo@gmail.com",
+    "password": "admin24",
+    "fk_athlete": 2,
+    "fk_sponsor": null
+}
+
+### 
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "rosamaria76@gmail.com",
+    "password": "admin24"
+}
+
+
+# Pregunta: ¿Metemos aquí el token o validado en el front porque solo puede acceder a él alguien que esté logado?
 
 
 ### 
-GET http://localhost:3000/api/deportistas/inveritos
+PUT http://localhost:3000/api/athletes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Content-Type: application/json
+
+{
+    "name": "Sica",
+    "surname": "Estevan",
+    "age": 29,
+    "photo": "jahskjahsas",
+    "sport": "Ski",
+    "country": "Norway",
+    "quantifydemand": 1000,
+    "percentage": 0,
+    "limitdate": "2021-11-21",
+    "graphic": "jasijailjs",
+    "followers": 130
+}
+
+
+### 
+GET http://localhost:3000/api/sponsors/myathletes
+Authorization: 
+
+
+### 
+GET http://localhost:3000/api/athletes/1
 
 ###
 PUT http://localhost:3000/api/sponsors
