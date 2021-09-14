@@ -1,3 +1,4 @@
+const { executeQuery } = require("../helpers");
 const { createAthlete } = require("./athlete.model");
 const { createSponsor } = require("./sponsor.model");
 
@@ -13,7 +14,7 @@ const register = ({ email, password, fk_athlete, fk_sponsor, name, surname, age,
         if (fk_athlete === null) {
             createSponsor(company, logo);
         }
-        db.query('insert into users (email, password, fk_athlete, fk_sponsor) values (?, ?, ?, ?)',
+        db.query('INSERT INTO USERS (email, password, fk_athlete, fk_sponsor) VALUES (?, ?, ?, ?)',
         [email, password, fk_athlete, fk_sponsor],
         (err, result) => {
             if (err) reject(err);
@@ -28,16 +29,12 @@ const register = ({ email, password, fk_athlete, fk_sponsor, name, surname, age,
 // recuperar el usuario por email para saber si se ha insertado bien
 
 const getByEmail = (email) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('select * from users where email = ?',
-        [email],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('SELECT * FROM users WHERE email = ?', 
+        [email]
+    );
 };
+
+
 
 
 // rejectOffer ---> PUT
@@ -48,33 +45,12 @@ const getByEmail = (email) => {
     // ¿Como parámetro es el id del usuario y de ahí se saca el fk_athlete o el fk_sponsor para saber el status de qué deportista se modifica? 
 
 const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('UPDATE patronus.athletes_sponsors SET fk_athletes = ?, fk_sponsors = ?, participations = ?, status = ? WHERE id = ?',
-        [fk_athletes, fk_sponsors, participations, status, id],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        executeQuery('UPDATE patronus.athletes_sponsors SET fk_athletes = ?, fk_sponsors = ?, participations = ?, status = ? WHERE id = ?',
+        [fk_athletes, fk_sponsors, participations, status, id]
+    );
 }
 
 
-
-
-
-
-
-
-
-
-
-
-// const getById = (userId) => {
-//     const prom = new Promise ((resolve, reject) => {
-
-//     })
-// }
 
 
 

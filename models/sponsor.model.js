@@ -58,12 +58,27 @@ const editProfile = (idSponsor, {company, logo}) => {
 }
 
 
+// nueva oferte
+
+const newOffer = ({id, fk_athletes, fk_sponsors, participations, status}) => {
+        return executeQuery('INSERT INTO patronus.athletes_sponsors (id, fk_athletes, fk_sponsors, participations, status) VALUES (?, ?, ?, ?, ?)',
+        [id, fk_athletes, fk_sponsors, participations, status]
+    );
+}
 
 
+
+// recuperar una única oferta por id
+
+const offerById = (id) => {
+        return executeUniqueQuery('SELECT * FROM patronus.athletes_sponsors WHERE id = ?', 
+        [id]
+    );
+}
 
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, createSponsor, getById
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, createSponsor, getById, newOffer, offerById
 
 }

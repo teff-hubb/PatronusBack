@@ -173,6 +173,25 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 GET http://localhost:3000/api/sponsors/myOffersRejecteds/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
+
+### 
+GET http://localhost:3000/api/sponsors/offer/2
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjUwNzgyLCJjcmVhdGVkX2F0IjoxNjMxNjQ3MTgyLCJpYXQiOjE2MzE2NDcxODJ9.AwPKJ0LTAAr4kC-oJLgD0FaxUnZHw3Q-jI8YQFgICWM
+
+
+###
+POST http://localhost:3000/api/sponsors/newOffer
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjUwNzgyLCJjcmVhdGVkX2F0IjoxNjMxNjQ3MTgyLCJpYXQiOjE2MzE2NDcxODJ9.AwPKJ0LTAAr4kC-oJLgD0FaxUnZHw3Q-jI8YQFgICWM
+Content-Type: application/json
+
+{
+    "id": 8,
+    "fk_athletes": "3",
+    "fk_sponsors": "2",
+    "participations": "1888800",
+    "status": "0"
+}
+
 ###
 PUT http://localhost:3000/api/sponsors/profile/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
