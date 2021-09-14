@@ -11,7 +11,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHBpcmVk
 GET http://localhost:3000/api/athletes/sport/baloncesto
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHBpcmVkX2F0IjoxNjMxNTQ3MTk0LCJjcmVhdGVkX2F0IjoxNjMxNTQ2ODk0LCJpYXQiOjE2MzE1NDY4OTR9.7nqAHzTWxa8OAcJRvOHD24xudGvWgvxgAE86VohlPek
 
+### 
 
+GET http://localhost:3000/api/athletes/invertibles
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
 
 
 

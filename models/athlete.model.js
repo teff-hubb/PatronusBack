@@ -41,7 +41,18 @@ const getSport = (nameSport) => {
     return prom;
 }
 
+// recuperar athletes  invertibles
 
+const getInvertible = () => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('select * from athletes where limitdate > now()',
+            (err, result) => {
+                if (err) reject(err);
+                if (result) resolve(result);
+        })
+    })
+    return prom;
+}
 
 
 
@@ -171,5 +182,5 @@ const changeStatus = () => {
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, getCountry, getSport, 
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, getCountry, getSport, getInvertible
 }

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getAll, getOffers, editProfile, getById, getAllOffers, getCountry, getSport, } = require('../../models/athlete.model');
+const { getAll, getOffers, editProfile, getById, getAllOffers, getCountry, getSport, getInvertible, } = require('../../models/athlete.model');
 
 
 // ver todos
@@ -31,7 +31,11 @@ router.get('/sport/:nameSport', async (req, res) => {
     }
 });
 
-
+router.get('/invertibles', async (req, res) => {
+    
+    const result = await getInvertible();
+    res.json(result);
+});
 
 
 
