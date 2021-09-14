@@ -1,26 +1,26 @@
 ### 
 GET http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjM3NTYyLCJjcmVhdGVkX2F0IjoxNjMxNjMzOTYyLCJpYXQiOjE2MzE2MzM5NjJ9.x2tqVVmxWaXSGkRjWyQNYhAloTyTOMa3zDsT8jSlT2s
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 ### 
 GET http://localhost:3000/api/athletes/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 ###
 GET http://localhost:3000/api/athletes/percentage
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 ###
 GET http://localhost:3000/api/athletes/limitdate
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 
 
 ### 
 GET http://localhost:3000/api/athletes/allOffers/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 ### 
 GET http://localhost:3000/api/athletes/offers/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
@@ -28,17 +28,17 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVk
 
 ### 
 GET http://localhost:3000/api/athletes/rejectedOffers/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 ### 
 GET http://localhost:3000/api/athletes/holdOffers/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 ### 
-GET http://localhost:3000/api/athletes/mysponsors/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
+GET http://localhost:3000/api/athletes/mysponsors/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 ### 
@@ -141,14 +141,14 @@ Content-Type: application/json
 
 
 ### 
-PUT http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+PUT http://localhost:3000/api/athletes/profile/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 Content-Type: application/json
 
 {
     "name": "Sica",
     "surname": "Estevan",
-    "age": 29,
+    "age": 819,
     "photo": "jahskjahsas",
     "sport": "Ski",
     "country": "Norway",
@@ -162,24 +162,24 @@ Content-Type: application/json
 
 ### 
 GET http://localhost:3000/api/sponsors/myathletes/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 
 ### 
 GET http://localhost:3000/api/sponsors/myAllOffers/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 ### 
 GET http://localhost:3000/api/sponsors/myOffersRejecteds/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
 ###
 PUT http://localhost:3000/api/sponsors/profile/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 Content-Type: application/json
 
 {
-    "company": "PUMITA",
+    "company": "PUMITITA",
     "logo": "AHSUHAU"
 }
 

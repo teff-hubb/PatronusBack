@@ -2,33 +2,24 @@
 
 // Métodos para lanzar las queries 
 
+const { executeQuery, executeUniqueQuery } = require("../helpers");
+
 
 // getAll
 
 const getAll = () => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('select * from athletes', (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom; 
+        return executeQuery('SELECT * FROM athletes', 
+        []
+    );
 }
 
 
 // getById 
 
 const getById = (athleteId) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('select * from athletes where id = ?',
-        [athleteId],
-        (err, result) => {
-            if (err) reject(err);
-            if (result.length !== 1) return resolve(null);
-            resolve(result[0]);
-        });
-    });
-    return prom;
+         return executeUniqueQuery('SELECT * FROM athletes where id = ?', 
+         [athleteId]
+    );
 };
 
 
@@ -36,15 +27,8 @@ const getById = (athleteId) => {
 // getAllOffers
 
 const getAllOffers = (idAthlete) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ?',
-        [idAthlete],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ?', 
+    [idAthlete]);
 }
 
 
@@ -52,15 +36,8 @@ const getAllOffers = (idAthlete) => {
 // getOffersWaiting
 
 const getOffersWaiting = (idAthlete) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 0',
-        [idAthlete],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 0', 
+    [idAthlete]);
 }
 
 
@@ -68,15 +45,8 @@ const getOffersWaiting = (idAthlete) => {
 // getOffersRejecteds 
 
 const getOffersRejecteds = (idAthlete) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 2',
-        [idAthlete],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 2', [idAthlete]
+    );
 }
 
 
@@ -84,15 +54,8 @@ const getOffersRejecteds = (idAthlete) => {
 // getMySponsors 
 
 const getMySponsors = (idAthlete) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 1',
-        [idAthlete],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND ats.status = 1', [idAthlete]
+    );
 }
 
 
@@ -108,13 +71,8 @@ const getMySponsors = (idAthlete) => {
 
 
 const orderByPercentage = () => {
-    const prom = new Promise((resolve, reject) => {
-        db.query('SELECT name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers FROM patronus.athletes ORDER BY percentage DESC', (err, result) => {
-            if(err) reject(err);
-            if(result) resolve(result);
-        })
-    })
-    return prom;
+        return executeQuery('SELECT name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers FROM patronus.athletes ORDER BY percentage DESC', []
+    );
 }
 
 
@@ -123,13 +81,8 @@ const orderByPercentage = () => {
 
 
 const orderByLimitdate = () => {
-    const prom = new Promise((resolve, reject) => {
-        db.query('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', []
+    );
 }
 
 
@@ -140,15 +93,8 @@ const orderByLimitdate = () => {
 
 // create athlete table athlete
 const createAthlete = ( name, surname, age ) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query('insert into patronus.athletes (name, surname, age) values (?, ?, ?)',
-        [name, surname, age],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('INSERT INTO patronus.athletes (name, surname, age) VALUES (?, ?, ?)', [name, surname, age]
+    );
 }
 
 
@@ -156,15 +102,9 @@ const createAthlete = ( name, surname, age ) => {
 // editProfile
 
 const editProfile = (idAthlete, { name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers }) => {
-    const prom = new Promise ((resolve, reject) => {
-        db.query(('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, quantitydemand = ?, percentage = ?, limitdate = ?, graphic = ?, followers = ? WHERE id = ?'),
-        [name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers, idAthlete],
-        (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
+        return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, quantitydemand = ?, percentage = ?, limitdate = ?, graphic = ?, followers = ? WHERE id = ?', [name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers, idAthlete]
+    );
+
 }
 
 
