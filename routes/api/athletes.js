@@ -16,17 +16,7 @@ router.get('/', async (req, res) => {
 })
 
 
-// ver un atleta 
 
-router.get('/:idAthlete', async (req, res) => {
-    try {
-        const idAthlete = req.params.idAthlete;
-        const result = await getById(idAthlete);
-        res.json(result);
-    } catch (error) {
-        res.json({error: err.message})
-    }
-});
 
 
 
@@ -123,7 +113,17 @@ router.get('/percentage', async (req, res) => {
 // ------------------------------------------------------------------- //
 
 
+// ver un atleta 
 
+router.get('/:idAthlete', async (req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await getById(idAthlete);
+        res.json(result);
+    } catch (error) {
+        res.json({error: err.message})
+    }
+});
 
 
 // editar perfil
@@ -138,6 +138,8 @@ router.put('/profile/:idAthlete', async (req, res) => {
         res.json({error: err.message})
     }
 })
+
+
 
 
 
