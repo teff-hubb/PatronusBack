@@ -47,10 +47,10 @@ const getByEmail = (email) => {
     // ¿Misma función para athlete que para sponsor y ambos cambian el status de la oferta en la base de datos?
     // ¿Como parámetro es el id del usuario y de ahí se saca el fk_athlete o el fk_sponsor para saber el status de qué deportista se modifica? 
 
-const changeStatus = (idAthlete, accept, eliminate, idSponsor) => {
+const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) => {
     const prom = new Promise ((resolve, reject) => {
-        db.query('',
-        [idAthlete],
+        db.query('UPDATE patronus.athletes_sponsors SET fk_athletes = ?, fk_sponsors = ?, participations = ?, status = ? WHERE id = ?',
+        [fk_athletes, fk_sponsors, participations, status, id],
         (err, result) => {
             if (err) reject(err);
             if (result) resolve(result);
@@ -58,6 +58,16 @@ const changeStatus = (idAthlete, accept, eliminate, idSponsor) => {
     });
     return prom;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 // const getById = (userId) => {

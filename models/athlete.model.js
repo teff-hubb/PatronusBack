@@ -100,15 +100,6 @@ const getMySponsors = (idAthlete) => {
 
 // ------------------------- ORDENAR --------------------------------- //
 
-const orderByLimitdate = () => {
-    const prom = new Promise((resolve, reject) => {
-        db.query('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', (err, result) => {
-            if (err) reject(err);
-            if (result) resolve(result);
-        });
-    });
-    return prom;
-}
 
 
 
@@ -131,6 +122,15 @@ const orderByPercentage = () => {
 // ordenar atletas por fecha de expiración de la inversión
 
 
+const orderByLimitdate = () => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', (err, result) => {
+            if (err) reject(err);
+            if (result) resolve(result);
+        });
+    });
+    return prom;
+}
 
 
 

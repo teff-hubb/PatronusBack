@@ -125,6 +125,22 @@ Content-Type: application/json
 
 
 ### 
+PUT http://localhost:3000/api/users/offers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.
+Content-Type: application/json
+
+{
+    "id": "6",
+    "fk_athletes": "1",
+    "fk_sponsors": "4",
+    "participations": "100",
+    "status": "1"
+}
+
+
+
+
+### 
 PUT http://localhost:3000/api/athletes
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
 Content-Type: application/json

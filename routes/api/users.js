@@ -1,5 +1,5 @@
 const { createToken } = require('../../helpers');
-const { getByEmail, register } = require('../../models/user.model');
+const { getByEmail, register, changeStatus } = require('../../models/user.model');
 const bcrypt = require('bcryptjs');
 
 const router = require('express').Router();
@@ -41,6 +41,15 @@ router.post('/login', async (req, res) => {
         res.json ({error: 'Error en usuario y/o contraseña 2'})
     }
 });
+
+
+// cambiar status oferta
+
+router.put('/offers', async (req, res) => {
+    const result = await changeStatus(req.body);
+    res.json(result);
+})
+
 
 
 
