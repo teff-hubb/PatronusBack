@@ -1,6 +1,6 @@
 ### 
 GET http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjMwMzc4LCJjcmVhdGVkX2F0IjoxNjMxNjMwMzE4LCJpYXQiOjE2MzE2MzAzMTh9.ww5UXax6zuXrH5RhULdtUsqu85p_s38keO-kbuxJyL8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjM3NTYyLCJjcmVhdGVkX2F0IjoxNjMxNjMzOTYyLCJpYXQiOjE2MzE2MzM5NjJ9.x2tqVVmxWaXSGkRjWyQNYhAloTyTOMa3zDsT8jSlT2s
 
 ### 
 GET http://localhost:3000/api/athletes/2

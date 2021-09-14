@@ -10,7 +10,7 @@ function createToken(user) {
         // role: user.role
     };
     console.log(payload);
-    return jwt.sign(payload, 'MUSIKISHA');
+    return jwt.sign(payload, process.env.SECRET_KEY);
 }
 
 

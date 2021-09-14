@@ -17,7 +17,7 @@ const checkToken = (req, res, next) => {
     // 2 - Desencriptamos el token (puede que este sí que tenga valores pero que esté mal);
     let payload;
     try {
-        payload = jwt.verify(token, 'MUSIKISHA');
+        payload = jwt.verify(token, process.env.SECRET_KEY);
         console.log(payload); 
     } catch (error) {
         return res.json({ error: 'El token es incorrecto' });
@@ -29,13 +29,34 @@ const checkToken = (req, res, next) => {
     }
 
     // 4 - Recuperar el usuario logueado;
-    console.log(payload.user_id);
+        // payload.user_id: Esto le va a decir a la aplicación quién es el usuario que le está lanzando la petición y actuar en consecuencia. 
 
-        // PREGUNTA: Diferenciar aquí si es fk_athlete o fk_sponsor
 
 
     next();
 }
 
 
+    // PREGUNTA: Diferenciar aquí si es fk_athlete o fk_sponsor
+        // Solo por pasar por el middleware ---> Le puedo añadir una propiedad al req : req.user y ese req.user empieza a formar parte del req y viaja con él, de forma que en los siguientes manejadores estará disponible esta información (de esta forma sabré qué user está logado).
+
+    // Ejemplo: 
+
+        // const checkRol = (req, res, next) => {}
+
+
+
+
 module.exports = { checkToken };
+
+
+
+
+// NOTA: 
+
+    /*      
+
+        TODOS los middlewares SIEMPRE tienen la misma estructura: 
+            const x = (req, res, next) => {}
+ 
+    */
