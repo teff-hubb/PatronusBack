@@ -6,6 +6,9 @@ router.get('/offers', (req, res) => {
     res.end('ruta get offers funcionando')
 });
 
+
+
+
 // POST localhost:3000/api/sponsors/register
 router.post('/register', (req, res) => {
     res.end('ruta post register funcionando')

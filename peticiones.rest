@@ -3,6 +3,16 @@ GET http://localhost:3000/api/athletes
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
 ### 
 GET http://localhost:3000/api/athletes/offers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHBpcmVkX2F0IjoxNjMxNTQ4NTYxLCJjcmVhdGVkX2F0IjoxNjMxNTQ4MjYxLCJpYXQiOjE2MzE1NDgyNjF9.GvkUmVAzqHBlUxrgNLVBEej_ybkvxyqQzAC6a_kCXsw
+
+
+
+### 
+GET http://localhost:3000/api/athletes/sport/baloncesto
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHBpcmVkX2F0IjoxNjMxNTQ3MTk0LCJjcmVhdGVkX2F0IjoxNjMxNTQ2ODk0LCJpYXQiOjE2MzE1NDY4OTR9.7nqAHzTWxa8OAcJRvOHD24xudGvWgvxgAE86VohlPek
+
+
+
 
 
 ### 
@@ -10,7 +20,7 @@ POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "email": "amparillo@gmail.com",
+    "email": "teffo@gmail.com",
     "password": "admin24",
     "fk_athlete": 2,
     "fk_sponsor": null
@@ -21,7 +31,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "rosamaria76@gmail.com",
+    "email": "teffo@gmail.com",
     "password": "admin24"
 }
 

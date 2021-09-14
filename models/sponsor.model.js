@@ -74,6 +74,8 @@ const editProfile = (idSponsor) => {
 
 
 
+
+
 // rejectOffer 
     // ¿igual que en athlete?
 

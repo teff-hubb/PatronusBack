@@ -12,6 +12,35 @@ const getAll = () => {
     });
     return prom; 
 }
+// Recuperar athletes por country
+
+const getCountry = (nameCountry) => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('select * from athletes where country = ?',
+            [nameCountry],
+            (err, result) => {
+                if (err)  reject(err);
+                if (result) resolve(result);
+            });
+    })
+    return prom;
+    
+}
+
+// Recuperar athletes por sport
+
+const getSport = (nameSport) => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('select * from athletes where sport = ?',
+            [nameSport],
+            (err, result) => {
+                if (err) reject(err);
+                if (result) resolve(result);
+            });
+    })
+    return prom;
+}
+
 
 
 
@@ -142,5 +171,5 @@ const changeStatus = () => {
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile,  
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, getCountry, getSport, 
 }

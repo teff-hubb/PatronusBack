@@ -1,10 +1,39 @@
 const router = require('express').Router();
 
 
-const { getAll, getOffers, editProfile, getById, getAllOffers } = require('../../models/athlete.model');
+const { getAll, getOffers, editProfile, getById, getAllOffers, getCountry, getSport, } = require('../../models/athlete.model');
 
 
 // ver todos
+
+router.get('/country/:nameCountry', async (req, res) => {
+    
+    try {
+        const nameCountry = req.params.nameCountry;// extraer el nombre del pais de la ruta
+        const result = await getCountry(nameCountry);
+        res.json(result);
+
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+});
+
+router.get('/sport/:nameSport', async (req, res) => {
+
+    try {
+        const nameSport = req.params.nameSport;
+        const result = await getSport(nameSport);
+        res.json(result);
+
+    } catch (err) {
+        res.json({ error: err.message });
+
+    }
+});
+
+
+
+
 
 router.get('/', async (req, res) => {
     try {
