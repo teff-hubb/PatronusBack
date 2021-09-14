@@ -1,6 +1,6 @@
 ### 
 GET http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNDcyNTY4LCJjcmVhdGVkX2F0IjoxNjMxNDcyMjY4LCJpYXQiOjE2MzE0NzIyNjh9.l8la_RqQxJTrrS4_YqREYwwTfpvERUzUACQ1GCIWVwM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjMwMzc4LCJjcmVhdGVkX2F0IjoxNjMxNjMwMzE4LCJpYXQiOjE2MzE2MzAzMTh9.ww5UXax6zuXrH5RhULdtUsqu85p_s38keO-kbuxJyL8
 
 ### 
 GET http://localhost:3000/api/athletes/2
@@ -68,11 +68,11 @@ POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "email": "norbertitititi@gmail.com",
-    "password": "admin24",
+    "email": "rosil@gmail.com",
+    "password": "aY9*",
     "fk_athlete": 2,
     "fk_sponsor": null,
-    "name": "Merysielo",
+    "name": "Mar",
     "surname": "Jilg",
     "age": 20,
     "photo": "aksjdjas",

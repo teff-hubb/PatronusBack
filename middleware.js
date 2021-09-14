@@ -24,7 +24,7 @@ const checkToken = (req, res, next) => {
     }
 
     // 3 - Comprobar si el token está caducado;
-    if(payload.expired_at < dayjs().js) {
+    if(payload.expired_at < dayjs().unix()) {
         return res.json({ error: 'El token está caducado' });
     }
 
