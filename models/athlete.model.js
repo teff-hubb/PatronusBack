@@ -1,4 +1,3 @@
-// const dayjs = require('dayjs');
 
 
 // Métodos para lanzar las queries 
@@ -101,18 +100,15 @@ const getMySponsors = (idAthlete) => {
 
 // ------------------------- ORDENAR --------------------------------- //
 
-
-
-
-// ------------------------- FILTROS --------------------------------- //
-
-
-// Filtrar por invertible (fecha límite no ha expirado)
-
-    // hoy = dayjs().unix();
-
-
-// ------------------------------------------------------------------- //
+const orderByLimitdate = () => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', (err, result) => {
+            if (err) reject(err);
+            if (result) resolve(result);
+        });
+    });
+    return prom;
+}
 
 
 
@@ -178,5 +174,5 @@ const editProfile = (idAthlete, { name, surname, age, photo, sport, country, qua
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage, orderByLimitdate
 }

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage } = require('../../models/athlete.model');
+const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate } = require('../../models/athlete.model');
 
 
 // ver todos
@@ -106,7 +106,10 @@ router.get('/percentage', async (req, res) => {
 
 // ver atletas ordenados por fecha de expiración
 
-
+router.get('/limitdate', async (req, res) => {
+    const result = await orderByLimitdate();
+    res.json(result);
+})
 
 
 

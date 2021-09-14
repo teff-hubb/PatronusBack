@@ -11,6 +11,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVk
 GET http://localhost:3000/api/athletes/percentage
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
 
+###
+GET http://localhost:3000/api/athletes/limitdate
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTYwNDE1LCJjcmVhdGVkX2F0IjoxNjMxNTYwMTE1LCJpYXQiOjE2MzE1NjAxMTV9.Vz796ELTsUDyylx5LBeuQG9IhdnTAKTmSMNNH1HdEvs
+
+
+
 
 ### 
 GET http://localhost:3000/api/athletes/allOffers/4
