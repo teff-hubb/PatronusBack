@@ -1,3 +1,6 @@
+// const dayjs = require('dayjs');
+
+
 // Métodos para lanzar las queries 
 
 
@@ -12,6 +15,22 @@ const getAll = () => {
     });
     return prom; 
 }
+
+
+// getById 
+
+const getById = (athleteId) => {
+    const prom = new Promise ((resolve, reject) => {
+        db.query('select * from athletes where id = ?',
+        [athleteId],
+        (err, result) => {
+            if (err) reject(err);
+            if (result.length !== 1) return resolve(null);
+            resolve(result[0]);
+        });
+    });
+    return prom;
+};
 
 
 
@@ -77,6 +96,50 @@ const getMySponsors = (idAthlete) => {
     return prom;
 }
 
+
+
+
+// ------------------------- ORDENAR --------------------------------- //
+
+
+
+
+// ------------------------- FILTROS --------------------------------- //
+
+
+// Filtrar por invertible (fecha límite no ha expirado)
+
+    // hoy = dayjs().unix();
+
+
+// ------------------------------------------------------------------- //
+
+
+
+
+// ordenar atletas por %invertido 
+
+
+const orderByPercentage = () => {
+    const prom = new Promise((resolve, reject) => {
+        db.query('SELECT name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers FROM patronus.athletes ORDER BY percentage DESC', (err, result) => {
+            if(err) reject(err);
+            if(result) resolve(result);
+        })
+    })
+    return prom;
+}
+
+
+
+// ordenar atletas por fecha de expiración de la inversión
+
+
+
+
+
+// ------------------------------------------------------------------- //
+
   
 
 // create athlete table athlete
@@ -111,22 +174,9 @@ const editProfile = (idAthlete, { name, surname, age, photo, sport, country, qua
 
 
 
-// getById 
-
-const getById = (athleteId) => {
-    return new Promise ((resolve, reject) => {
-        db.query('select * from athletes where id = ?',
-        [athleteId],
-        (err, result) => {
-            if (err) reject(err);
-            if (result.length !== 1) return resolve(null);
-            resolve(result[0]);
-        });
-    });
-};
 
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage
 }

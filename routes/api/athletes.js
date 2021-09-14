@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors } = require('../../models/athlete.model');
+const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage } = require('../../models/athlete.model');
 
 
 // ver todos
@@ -27,6 +27,8 @@ router.get('/:idAthlete', async (req, res) => {
         res.json({error: err.message})
     }
 });
+
+
 
 
 // ver todas las ofertas recibidas
@@ -93,6 +95,35 @@ router.get('/mysponsors/:idAthlete', async (req, res) => {
         res.json({error: err.message})
     }
 })
+
+
+
+// ------------------------- ORDENAR --------------------------------- //
+
+
+// ver atletas ordenados por porcentaje 
+
+router.get('/percentage', async (req, res) => {
+    try {
+        const result = await orderByPercentage();
+        res.json(result);
+    } catch (error) {
+        res.json({error: err.message});
+    }
+})
+
+
+
+// ver atletas ordenados por fecha de expiración
+
+
+
+
+
+// ------------------------------------------------------------------- //
+
+
+
 
 
 // editar perfil
