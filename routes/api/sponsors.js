@@ -1,4 +1,4 @@
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, offerById } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, offerById, deleteAccount } = require('../../models/sponsor.model');
 const { newOffer } = require('../../models/user.model');
 
 const router = require('express').Router();
@@ -84,6 +84,19 @@ router.put('/profile/:idSponsor', async (req, res) => {
     }
 });
 
+
+// darse de baja
+
+router.put('/deleteaccount/:idSponsor', async (req, res) => {
+    try {
+        const idSponsor = req.params.idSponsor;
+        const result = await deleteAccount(idSponsor);
+        console.log(result);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+})
 
 
 

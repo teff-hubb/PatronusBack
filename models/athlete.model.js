@@ -111,8 +111,38 @@ const editProfile = (idAthlete, { name, surname, age, photo, sport, country, qua
 
 
 
+// sumar participaciones 
+
+const sumParticipations = (fk_athlete, participations) => {
+    return executeQuery('', [fk_athlete, participations]);
+}
+
+
+
+
+
+// restar participaciones
+
+const restParticipations = (fk_athlete, participations) => {
+    return executeQuery('', [fk_athlete, participations]);
+}
+
+
+
+
+
+// darse de baja
+
+const deleteAccount = (idAthlete) => {
+    return executeQuery('UPDATE patronus.athletes SET status = 0 WHERE id = ?', 
+    [idAthlete]);
+}
+
+
+
+
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage, orderByLimitdate
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount
 }

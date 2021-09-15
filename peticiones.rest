@@ -173,6 +173,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 GET http://localhost:3000/api/sponsors/myOffersRejecteds/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
 
+###
+PUT http://localhost:3000/api/athletes/deleteaccount/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzA1MjQ3LCJjcmVhdGVkX2F0IjoxNjMxNzAxNjQ3LCJpYXQiOjE2MzE3MDE2NDd9.We3f6q162vgIAD0BCBt95TkLjWiEmbD2zY7gEj_FL-0
+
+
 
 ### 
 GET http://localhost:3000/api/sponsors/offer/2
@@ -202,3 +207,8 @@ Content-Type: application/json
     "logo": "AHSUHAU"
 }
 
+
+
+###
+PUT http://localhost:3000/api/sponsors/deleteaccount/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzA0NzYwLCJjcmVhdGVkX2F0IjoxNjMxNzAxMTYwLCJpYXQiOjE2MzE3MDExNjB9.fx4IY1E2jx25QXBCvqvhJQwl1zQToydgMtU-Hto_84E

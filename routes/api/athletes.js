@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate } = require('../../models/athlete.model');
+const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate, deleteAccount } = require('../../models/athlete.model');
 
 
 // ver todos
@@ -136,6 +136,18 @@ router.put('/profile/:idAthlete', async (req, res) => {
         res.json(athlete);
     } catch (err) {
         res.json({error: err.message})
+    }
+})
+
+
+
+router.put('/deleteaccount/:idAthlete', async (req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await deleteAccount(idAthlete);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
     }
 })
 

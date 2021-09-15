@@ -78,7 +78,15 @@ const offerById = (id) => {
 
 
 
+// darse de baja
+const deleteAccount = (idSponsor) => {
+    return executeQuery('UPDATE patronus.sponsors SET status = 0 WHERE id = ?', [idSponsor]);
+}
+
+
+
+
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, createSponsor, getById, newOffer, offerById
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, createSponsor, getById, newOffer, offerById, deleteAccount
 
 }
