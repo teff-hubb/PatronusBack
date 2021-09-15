@@ -11,9 +11,11 @@ router.get('/', async (req, res) => {
         const result = await getAll();
         res.json(result);
     } catch (err) {
-        res.json({error: err.message})
+        res.json({error: err.message});
     }
-})
+});
+
+
 
 
 
@@ -28,7 +30,7 @@ router.get('/allOffers/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getAllOffers(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 });
@@ -42,7 +44,7 @@ router.get('/offers/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getOffersWaiting(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 })
@@ -55,7 +57,7 @@ router.get('/rejectedOffers/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getOffersRejecteds(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 })
@@ -68,7 +70,7 @@ router.get('/holdOffers/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getOffersWaiting(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 })
@@ -81,7 +83,7 @@ router.get('/mysponsors/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getMySponsors(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 })
@@ -97,7 +99,7 @@ router.get('/percentage', async (req, res) => {
     try {
         const result = await orderByPercentage();
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 })
