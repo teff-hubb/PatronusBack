@@ -18,11 +18,6 @@ router.get('/', async (req, res) => {
 
 
 
-
-
-
-
-
 // ver todas las ofertas recibidas
 
 router.get('/allOffers/:idAthlete', async (req, res) => {
@@ -139,7 +134,7 @@ router.put('/profile/:idAthlete', async (req, res) => {
         const result = await editProfile(idAthlete, req.body);
         const athlete = await getById(idAthlete);
         res.json(athlete);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 })
