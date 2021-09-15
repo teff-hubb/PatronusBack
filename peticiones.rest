@@ -119,7 +119,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "rosamaria76@gmail.com",
+    "email": "teffo@gmail.com",
     "password": "admin24"
 }
 

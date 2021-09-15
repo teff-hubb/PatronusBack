@@ -2,12 +2,6 @@ const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getByI
 
 const router = require('express').Router();
 
-
-router.get('/offers', (req, res) => {
-    res.end('ruta get offers funcionando')
-});
-
-
 // deportistas invertidos
 
 router.get('/myathletes/:idSponsor', async (req, res) => {
