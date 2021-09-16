@@ -126,6 +126,9 @@ router.get('/:idAthlete', async (req, res) => {
 });
 
 
+
+
+
 // editar perfil
 
 router.put('/profile/:idAthlete', async (req, res) => {

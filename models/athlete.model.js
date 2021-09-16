@@ -91,11 +91,7 @@ const orderByLimitdate = () => {
 
   
 
-// create athlete table athlete
-const createAthlete = ( name, surname, age ) => {
-        return executeQuery('INSERT INTO patronus.athletes (name, surname, age) VALUES (?, ?, ?)', [name, surname, age]
-    );
-}
+
 
 
 
@@ -123,6 +119,8 @@ const sumParticipations = (fk_athlete, participations) => {
 
 // restar participaciones
 
+// En principio dejarlo SIN utilidad
+
 const restParticipations = (fk_athlete, participations) => {
     return executeQuery('', [fk_athlete, participations]);
 }
@@ -144,5 +142,5 @@ const deleteAccount = (idAthlete) => {
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, createAthlete, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount
 }

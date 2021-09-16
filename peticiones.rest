@@ -1,6 +1,6 @@
 ### 
 GET http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzg5MDU4LCJjcmVhdGVkX2F0IjoxNjMxNzg1NDU4LCJpYXQiOjE2MzE3ODU0NTh9.pCoii-YSEpO39CGoxzmnlskzjWMyKBIJC5ZtzHiIxDk
 
 ### 
 GET http://localhost:3000/api/athletes/2
@@ -64,11 +64,36 @@ Content-Type: application/json
 
 
 ### 
+POST http://localhost:3000/api/users/register/athlete
+Content-Type: application/json
+
+{
+    "email": "rissdaaadassass@gmail.com",
+    "password": "aaaY9*",
+    "name": "aaaaa",
+    "surname": "Jisaslg",
+    "age": 20
+}
+
+
+### 
+
+POST http://localhost:3000/api/users/register/sponsor
+Content-Type: application/json
+
+{
+    "email": "rissEE@gmail.com",
+    "password": "aaaY9*",
+    "company": "RORO TRIUNFAL"
+}
+
+
+### 
 POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "email": "rosil@gmail.com",
+    "email": "rosittal@gmail.com",
     "password": "aY9*",
     "fk_athlete": 2,
     "fk_sponsor": null,
@@ -95,7 +120,7 @@ Content-Type: application/json
 
 {
     "email": "sponsorchuli@gmail.com",
-    "password": "admin24",
+    "password": "Admin!24",
     "fk_athlete": null,
     "fk_sponsor": 19,
     "name": null,

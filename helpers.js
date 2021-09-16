@@ -25,11 +25,13 @@ function executeUniqueQuery(query, arrParams = []) {
 
 
 function createToken(user) {
+    if(!user.fk_athlete) role = "S";
+    if(!user.fk_sponsor) role = "A";
     const payload = {
-        user_id: user.id,
+        user_id: user.fk_athlete || user.fk_sponsor,
         expired_at: dayjs().add(60, 'minutes').unix(),
-        created_at: dayjs().unix()
-        // role: user.role
+        created_at: dayjs().unix(),
+        user_role: role
     };
     console.log(payload);
     return jwt.sign(payload, process.env.SECRET_KEY);

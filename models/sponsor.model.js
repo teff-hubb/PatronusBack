@@ -39,14 +39,6 @@ const getMyOffersRejecteds = (idSponsor) => {
 
 
 
-// create sponsor
-
-const createSponsor = (company, logo) => {
-        return executeQuery('INSERT INTO sponsors (company, logo) VALUES (?, ?)', 
-        [company,logo]
-    );
-}
-
 
 
 // editar perfil 
@@ -87,6 +79,6 @@ const deleteAccount = (idSponsor) => {
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, createSponsor, getById, newOffer, offerById, deleteAccount
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, newOffer, offerById, deleteAccount
 
 }
