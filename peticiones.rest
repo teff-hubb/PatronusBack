@@ -68,7 +68,7 @@ POST http://localhost:3000/api/users/register/athlete
 Content-Type: application/json
 
 {
-    "email": "rissdaaadassass@gmail.com",
+    "email": "rassass@gmail.com",
     "password": "aaaY9*",
     "name": "aaaaa",
     "surname": "Jisaslg",
@@ -82,7 +82,7 @@ POST http://localhost:3000/api/users/register/sponsor
 Content-Type: application/json
 
 {
-    "email": "rissEE@gmail.com",
+    "email": "rissw@gmail.com",
     "password": "aaaY9*",
     "company": "RORO TRIUNFAL"
 }
