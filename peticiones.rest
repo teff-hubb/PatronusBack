@@ -28,7 +28,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVk
 
 ### 
 GET http://localhost:3000/api/athletes/rejectedOffers/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3OTc1NSwiY3JlYXRlZF9hdCI6MTYzMTg3NjE1NSwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3NjE1NX0.TAO9lQ5zbEbvZq1aWsQ868IHp462hK8RYzvqAe7JA_Y
 
 
 ### 
@@ -68,7 +68,7 @@ POST http://localhost:3000/api/users/register/athlete
 Content-Type: application/json
 
 {
-    "email": "rassass@gmail.com",
+    "email": "rassaeekkess@gmail.com",
     "password": "aaaY9*",
     "name": "aaaaa",
     "surname": "Jisaslg",
@@ -82,60 +82,9 @@ POST http://localhost:3000/api/users/register/sponsor
 Content-Type: application/json
 
 {
-    "email": "rissw@gmail.com",
+    "email": "roerlllittto@gmail.com",
     "password": "aaaY9*",
-    "company": "RORO TRIUNFAL"
-}
-
-
-### 
-POST http://localhost:3000/api/users/register
-Content-Type: application/json
-
-{
-    "email": "rosittal@gmail.com",
-    "password": "aY9*",
-    "fk_athlete": 2,
-    "fk_sponsor": null,
-    "name": "Mar",
-    "surname": "Jilg",
-    "age": 20,
-    "photo": "aksjdjas",
-    "sport": "jaskjhdas",
-    "country": "asjhuasd",
-    "quantitydemand": "jasijdas",
-    "percentage": 40,
-    "limitdate": "2021-10-09",
-    "graphic": "askjdhajshdajs",
-    "followers": 219,
-    "company": null,
-    "logo": null
-}
-
-
-
-### 
-POST http://localhost:3000/api/users/register
-Content-Type: application/json
-
-{
-    "email": "sponsorchuli@gmail.com",
-    "password": "Admin!24",
-    "fk_athlete": null,
-    "fk_sponsor": 19,
-    "name": null,
-    "surname": null,
-    "age": null,
-    "photo": null,
-    "sport": null,
-    "country": null,
-    "quantitydemand": null,
-    "percentage": null,
-    "limitdate": null,
-    "graphic": null,
-    "followers": null,
-    "company": "Importante",
-    "logo": "jaskjahsudsomoslosmejores"
+    "company": "RORO"
 }
 
 
@@ -144,8 +93,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "rosamaria76@gmail.com",
-    "password": "admin24"
+    "email": "rassaeekkess@gmail.com",
+    "password": "aaaY9*"
 }
 
 
@@ -167,7 +116,7 @@ Content-Type: application/json
 
 ### 
 PUT http://localhost:3000/api/athletes/profile/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
 Content-Type: application/json
 
 {
@@ -187,12 +136,12 @@ Content-Type: application/json
 
 ### 
 GET http://localhost:3000/api/sponsors/myathletes/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZF9hdCI6MTYzMTg3OTQ4OCwiY3JlYXRlZF9hdCI6MTYzMTg3NTg4OCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTg3NTg4OH0.xsHmCo8nNMOqT7tNTGbDBJ4q-QX4kbCI3zXBVjCDHpQ
 
 
 ### 
 GET http://localhost:3000/api/sponsors/myAllOffers/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZF9hdCI6MTYzMTg3OTQ4OCwiY3JlYXRlZF9hdCI6MTYzMTg3NTg4OCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTg3NTg4OH0.xsHmCo8nNMOqT7tNTGbDBJ4q-QX4kbCI3zXBVjCDHpQ
 
 ### 
 GET http://localhost:3000/api/sponsors/myOffersRejecteds/1
@@ -200,13 +149,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 
 ###
 PUT http://localhost:3000/api/athletes/deleteaccount/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzA1MjQ3LCJjcmVhdGVkX2F0IjoxNjMxNzAxNjQ3LCJpYXQiOjE2MzE3MDE2NDd9.We3f6q162vgIAD0BCBt95TkLjWiEmbD2zY7gEj_FL-0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
 
 
 
 ### 
 GET http://localhost:3000/api/sponsors/offer/2
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjUwNzgyLCJjcmVhdGVkX2F0IjoxNjMxNjQ3MTgyLCJpYXQiOjE2MzE2NDcxODJ9.AwPKJ0LTAAr4kC-oJLgD0FaxUnZHw3Q-jI8YQFgICWM
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZF9hdCI6MTYzMTg3NjY5MiwiY3JlYXRlZF9hdCI6MTYzMTg3MzA5MiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTg3MzA5Mn0.kTIp5ysEqvO1ep1egN3-Nqp3SjAuW-Gx9p0Id9wr_Wg
 
 
 ###
@@ -224,7 +173,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/api/sponsors/profile/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
 Content-Type: application/json
 
 {
@@ -236,4 +185,58 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:3000/api/sponsors/deleteaccount/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzA0NzYwLCJjcmVhdGVkX2F0IjoxNjMxNzAxMTYwLCJpYXQiOjE2MzE3MDExNjB9.fx4IY1E2jx25QXBCvqvhJQwl1zQToydgMtU-Hto_84E
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
+
+
+
+
+
+# ### 
+# POST http://localhost:3000/api/users/register
+# Content-Type: application/json
+
+# {
+#     "email": "rosittal@gmail.com",
+#     "password": "aY9*",
+#     "fk_athlete": 2,
+#     "fk_sponsor": null,
+#     "name": "Mar",
+#     "surname": "Jilg",
+#     "age": 20,
+#     "photo": "aksjdjas",
+#     "sport": "jaskjhdas",
+#     "country": "asjhuasd",
+#     "quantitydemand": "jasijdas",
+#     "percentage": 40,
+#     "limitdate": "2021-10-09",
+#     "graphic": "askjdhajshdajs",
+#     "followers": 219,
+#     "company": null,
+#     "logo": null
+# }
+
+
+
+# ### 
+# POST http://localhost:3000/api/users/register
+# Content-Type: application/json
+
+# {
+#     "email": "sponsorchuli@gmail.com",
+#     "password": "Admin!24",
+#     "fk_athlete": null,
+#     "fk_sponsor": 19,
+#     "name": null,
+#     "surname": null,
+#     "age": null,
+#     "photo": null,
+#     "sport": null,
+#     "country": null,
+#     "quantitydemand": null,
+#     "percentage": null,
+#     "limitdate": null,
+#     "graphic": null,
+#     "followers": null,
+#     "company": "Importante",
+#     "logo": "jaskjahsudsomoslosmejores"
+# }

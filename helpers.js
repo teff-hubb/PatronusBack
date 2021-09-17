@@ -33,7 +33,7 @@ function createToken(user) {
         created_at: dayjs().unix(),
         user_role: role
     };
-    console.log(payload);
+    console.log('Esto es payload', payload);
     return jwt.sign(payload, process.env.SECRET_KEY);
 }
 

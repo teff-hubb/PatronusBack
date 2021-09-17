@@ -27,7 +27,7 @@ router.post('/register/athlete',
             }
             const athlete = await createAthlete(req.body);
             req.body.password = bcrypt.hashSync(req.body.password, 10);
-            const result = await registerUser(req.body, athlete.insertId);
+            const result = await registerUser(req.body, athlete.insertId, null, 'A');
             res.json(result);
         } catch (err) {
             res.json({error: err.message})
@@ -54,7 +54,7 @@ router.post('/register/sponsor',
             }
             const sponsor = await createSponsor(req.body);
             req.body.password = bcrypt.hashSync(req.body.password, 10);
-            const result = await registerUser(req.body, sponsor.insertId);
+            const result = await registerUser(req.body, null, sponsor.insertId, 'S');
             res.json(result);
         } catch (err) {
             res.json({ error: err.message })
@@ -72,10 +72,11 @@ router.post('/login', async (req, res) => {
         return res.json({ error: 'Error en usuario y/o contraseña - (es el email)' });
     }
     const equal = bcrypt.compareSync(req.body.password, user.password);
+    console.log('console', user);
     if (equal) {
         res.json({ success: 'Login correcto',
-                token: createToken(user)
-                 });
+                token: createToken(user),
+                user: user.role});
     } else {
         res.json ({error: 'Error en usuario y/o contraseña - (es la contraseña)'})
     }

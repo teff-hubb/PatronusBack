@@ -22,11 +22,13 @@ const createSponsor = ({ company, logo }) => {
 
 // register 
 
-const registerUser = ({ email, password }, fk_athlete, fk_sponsor) => {
-        return executeQuery('INSERT INTO USERS (email, password, fk_athlete, fk_sponsor) VALUES (?, ?, ?, ?)',
-        [email, password, fk_athlete, fk_sponsor]
+const registerUser = ({ email, password }, fk_athlete, fk_sponsor, role) => {
+        return executeQuery('INSERT INTO USERS (email, password, fk_athlete, fk_sponsor, role) VALUES (?, ?, ?, ?, ?)',
+        [email, password, fk_athlete, fk_sponsor, role]
     );
 }
+
+
 
 
 
@@ -58,6 +60,16 @@ const getByEmail = (email) => {
     );
 };
 
+const getByIdAthlete = (idAthlete) => {
+    return executeUniqueQuery('SELECT * FROM users WHERE fk_athlete = ?',
+    [idAthlete])
+}
+
+const getByIdSponsor = (idSponsor) => {
+    return executeUniqueQuery('SELECT * FROM users WHERE fk_sponsor = ?',
+    [idSponsor])
+}
+
 
 
 
@@ -83,5 +95,5 @@ const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) =>
 
 
 module.exports = {
-    getByEmail, changeStatus, createAthlete, createSponsor, registerUser 
+    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor 
 }
