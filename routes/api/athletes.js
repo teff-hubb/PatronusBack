@@ -6,6 +6,39 @@ const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersR
 
 // ver todos
 
+router.get('/country/:nameCountry', async (req, res) => {
+    
+    try {
+        const nameCountry = req.params.nameCountry;// extraer el nombre del pais de la ruta
+        const result = await getCountry(nameCountry);
+        res.json(result);
+
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+});
+
+router.get('/sport/:nameSport', async (req, res) => {
+
+    try {
+        const nameSport = req.params.nameSport;
+        const result = await getSport(nameSport);
+        res.json(result);
+
+    } catch (err) {
+        res.json({ error: err.message });
+
+    }
+});
+
+router.get('/invertibles', async (req, res) => {
+    
+    const result = await getInvertible();
+    res.json(result);
+});
+
+
+
 router.get('/', async (req, res) => {
     try {
         const result = await getAll();
