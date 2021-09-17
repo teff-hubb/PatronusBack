@@ -3,8 +3,8 @@ const { executeQuery, executeUniqueQuery } = require("../helpers");
 
 
 // create athlete table athlete
-const createAthlete = ({ name, surname, age }) => {
-        return executeQuery('INSERT INTO patronus.athletes (name, surname, age) VALUES (?, ?, ?)', [name, surname, age]
+const createAthlete = ({ nombre, apellidos, edad }) => {
+        return executeQuery('INSERT INTO patronus.athletes (name, surname, age) VALUES (?, ?, ?)', [nombre, apellidos, edad]
     );
 }
 
@@ -12,9 +12,9 @@ const createAthlete = ({ name, surname, age }) => {
 
 // create sponsor table sponsor
 
-const createSponsor = ({ company, logo }) => {
-        return executeQuery('INSERT INTO sponsors (company, logo) VALUES (?, ?)', 
-        [company,logo]
+const createSponsor = ({ empresa }) => {
+        return executeQuery('INSERT INTO sponsors (company) VALUES (?)', 
+        [empresa]
     );
 }
 

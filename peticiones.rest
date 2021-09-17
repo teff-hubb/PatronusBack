@@ -82,9 +82,9 @@ POST http://localhost:3000/api/users/register/sponsor
 Content-Type: application/json
 
 {
-    "email": "roerlllittto@gmail.com",
+    "email": "roewtto@gmail.com",
     "password": "aaaY9*",
-    "company": "RORO"
+    "company": "RORO si"
 }
 
 
