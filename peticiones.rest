@@ -43,11 +43,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 
 ### 
 PUT http://localhost:3000/api/athletes/profile/52
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0OSwiZXhwaXJlZF9hdCI6MTYzMTk4MzIwMCwiY3JlYXRlZF9hdCI6MTYzMTk3OTYwMCwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTk3OTYwMH0.3h4ikfR8pu4Max-7wEwicH_ZjkfV8BQ5pKRWW8qyFIo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMTk4ODA4NiwiY3JlYXRlZF9hdCI6MTYzMTk4NDQ4NiwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTk4NDQ4Nn0.YiT7sy2Joo8f2dhmHCAlbjUiiX1DKwb40w_ucektDBk
 Content-Type: application/json
 
 {
-    "name": "Sika",
+    "name": "Sijjjka",
     "surname": "Hernaiz",
     "age": 12,
     "photo": "fotodelamásguapa",
@@ -58,7 +58,7 @@ Content-Type: application/json
     "limitdate": "2022-02-02",
     "grafic": "ahksuhas",
     "followers": 9000,
-    "email": "rovdsica@gmail.com"
+    "email": "rsica@gmail.com"
 }
 
 
@@ -93,7 +93,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "nike2@gmail.com",
+    "email": "tipitent@gmail.com",
     "password": "Admin123!"
 }
 
@@ -172,14 +172,14 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/sponsors/profile/42
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MSwiZXhwaXJlZF9hdCI6MTYzMTk4NDEwNywiY3JlYXRlZF9hdCI6MTYzMTk4MDUwNywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTk4MDUwN30.LSsPKN5kQmIAxBrptjKQSgLe8_zChhsRg0SY8imSBUY
+PUT http://localhost:3000/api/sponsors/profile/45
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjAwMzEyMywiY3JlYXRlZF9hdCI6MTYzMTk5OTUyMywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTk5OTUyM30.eNWzXMqD-bNa4f4YwkEQCl5Jbk--IvUTjVNkYACJJ9E
 Content-Type: application/json
 
 {
-    "company": "NAIK",
+    "company": "tipitentito",
     "logo": "AHSUHAU", 
-    "email": "nike3@gmail.com"
+    "email": "tipitent@gmail.com"
 }
 
 

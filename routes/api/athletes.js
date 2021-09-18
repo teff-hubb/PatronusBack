@@ -153,7 +153,7 @@ router.get('/:idAthlete', async (req, res) => {
         const idAthlete = req.params.idAthlete;
         const result = await getById(idAthlete);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message})
     }
 });

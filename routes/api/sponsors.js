@@ -1,4 +1,4 @@
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, offerById, deleteAccount, editSponsor, editUser } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, getById, offerById, deleteAccount, editSponsor, editUser } = require('../../models/sponsor.model');
 const { newOffer } = require('../../models/user.model');
 
 const router = require('express').Router();
@@ -27,7 +27,7 @@ router.get('/myAllOffers/:idSponsor', async (req, res) => {
         const idSponsor = req.params.idSponsor;
         const result = await getMyAllOffers(idSponsor);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 })
@@ -40,7 +40,7 @@ router.get('/myOffersRejecteds/:idSponsor', async (req, res) => {
         const idSponsor = req.params.idSponsor;
         const result = await getMyOffersRejecteds(idSponsor);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 })
@@ -52,7 +52,7 @@ router.get('/offer/:idOffer', async (req, res) => {
         const result = await offerById(idOffer);
         console.log(result)
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 })
@@ -64,7 +64,7 @@ router.post('/newOffer', async (req, res) => {
     try {
         const result = await newOffer(req.body);
         res.json(result);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 })
@@ -77,10 +77,10 @@ router.put('/profile/:idSponsor', async (req, res) => {
     try {
         const idSponsor = req.params.idSponsor;
         const sponsorChanged = await editSponsor(idSponsor, req.body);
-        const userChanged = await editUser(idSponsor, req.body.email);
+        const userChanged = await editUser(idSponsor, req.body);
         const sponsor = await getById(idSponsor);
         res.json(sponsor);
-    } catch (error) {
+    } catch (err) {
         res.json({error: err.message});
     }
 });

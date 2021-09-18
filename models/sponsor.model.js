@@ -49,7 +49,8 @@ const editSponsor = (idSponsor, {company, logo}) => {
     );
 }
 
-const editUser = (idSponsor, email) => {
+const editUser = (idSponsor, {email}) => {
+        console.log(email, idSponsor);
         return executeQuery('UPDATE patronus.users SET email = ? WHERE fk_sponsor = ?',
         [email, idSponsor]
     );
