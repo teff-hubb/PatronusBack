@@ -43,9 +43,15 @@ const getMyOffersRejecteds = (idSponsor) => {
 
 // editar perfil 
 
-const editProfile = (idSponsor, {company, logo}) => {
+const editSponsor = (idSponsor, {company, logo}) => {
         return executeQuery('UPDATE patronus.sponsors SET company = ?, logo = ? WHERE id = ?',
         [company, logo, idSponsor],
+    );
+}
+
+const editUser = (idSponsor, email) => {
+        return executeQuery('UPDATE patronus.users SET email = ? WHERE fk_sponsor = ?',
+        [email, idSponsor]
     );
 }
 
@@ -79,6 +85,6 @@ const deleteAccount = (idSponsor) => {
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, newOffer, offerById, deleteAccount
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, newOffer, offerById, deleteAccount, editUser
 
 }

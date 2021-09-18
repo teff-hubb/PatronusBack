@@ -137,11 +137,19 @@ const orderByLimitdate = () => {
 
 // editProfile
 
-const editProfile = (idAthlete, { name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers }) => {
+const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers }) => {
         return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, quantitydemand = ?, percentage = ?, limitdate = ?, graphic = ?, followers = ? WHERE id = ?', [name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers, idAthlete]
     );
 
 }
+
+
+const editDatesUser = (idAthlete, email) => {
+    return executeQuery('UPDATE patronus.users SET email = ? WHERE fk_athlete = ?',
+    [email, idAthlete]
+);
+}
+
 
 
 
@@ -182,5 +190,5 @@ const deleteAccount = (idAthlete) => {
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editProfile, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount
+    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount, editDatesUser
 }

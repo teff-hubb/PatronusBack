@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getAll, editProfile, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate, deleteAccount } = require('../../models/athlete.model');
+const { getAll, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate, deleteAccount, editDatesAthlete, editDatesUser } = require('../../models/athlete.model');
 
 
 // ver todos
@@ -167,7 +167,8 @@ router.get('/:idAthlete', async (req, res) => {
 router.put('/profile/:idAthlete', async (req, res) => {
     try {
         const idAthlete = req.params.idAthlete;
-        const result = await editProfile(idAthlete, req.body);
+        const athleteChanged = await editDatesAthlete(idAthlete, req.body);
+        const userChanged = await editDatesUser(idAthlete, req.body.email);
         const athlete = await getById(idAthlete);
         res.json(athlete);
     } catch (err) {

@@ -76,7 +76,9 @@ router.post('/login', async (req, res) => {
     if (equal) {
         res.json({ success: 'Login correcto',
                 token: createToken(user),
-                user: user.role});
+                role: user.role,
+                userId: user.fk_athlete || user.fk_sponsor
+                });
     } else {
         res.json ({error: 'Error en usuario y/o contraseña - (es la contraseña)'})
     }

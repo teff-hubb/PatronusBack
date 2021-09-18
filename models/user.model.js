@@ -4,7 +4,7 @@ const { executeQuery, executeUniqueQuery } = require("../helpers");
 
 // create athlete table athlete
 const createAthlete = ({ nombre, apellidos, edad }) => {
-        return executeQuery('INSERT INTO patronus.athletes (name, surname, age) VALUES (?, ?, ?)', [nombre, apellidos, edad]
+        return executeQuery('INSERT INTO patronus.athletes (name, surname, age, status) VALUES (?, ?, ?, ?)', [nombre, apellidos, edad, 1]
     );
 }
 
@@ -13,8 +13,8 @@ const createAthlete = ({ nombre, apellidos, edad }) => {
 // create sponsor table sponsor
 
 const createSponsor = ({ empresa }) => {
-        return executeQuery('INSERT INTO sponsors (company) VALUES (?)', 
-        [empresa]
+        return executeQuery('INSERT INTO sponsors (company, status) VALUES (?, ?)', 
+        [empresa, 1]
     );
 }
 
@@ -94,6 +94,7 @@ const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) =>
 
 
 
+
 module.exports = {
-    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor 
+    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor
 }

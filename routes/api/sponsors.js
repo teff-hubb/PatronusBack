@@ -1,4 +1,4 @@
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, offerById, deleteAccount } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editProfile, getById, offerById, deleteAccount, editSponsor, editUser } = require('../../models/sponsor.model');
 const { newOffer } = require('../../models/user.model');
 
 const router = require('express').Router();
@@ -76,7 +76,8 @@ router.post('/newOffer', async (req, res) => {
 router.put('/profile/:idSponsor', async (req, res) => {
     try {
         const idSponsor = req.params.idSponsor;
-        const result = await editProfile(idSponsor, req.body);
+        const sponsorChanged = await editSponsor(idSponsor, req.body);
+        const userChanged = await editUser(idSponsor, req.body.email);
         const sponsor = await getById(idSponsor);
         res.json(sponsor);
     } catch (error) {

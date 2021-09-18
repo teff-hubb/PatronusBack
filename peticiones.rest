@@ -42,12 +42,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 
 
 ### 
-PUT http://localhost:3000/api/athletes/profile/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
+PUT http://localhost:3000/api/athletes/profile/52
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0OSwiZXhwaXJlZF9hdCI6MTYzMTk4MzIwMCwiY3JlYXRlZF9hdCI6MTYzMTk3OTYwMCwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTk3OTYwMH0.3h4ikfR8pu4Max-7wEwicH_ZjkfV8BQ5pKRWW8qyFIo
 Content-Type: application/json
 
 {
-    "idAthlete": 4, 
     "name": "Sika",
     "surname": "Hernaiz",
     "age": 12,
@@ -58,7 +57,8 @@ Content-Type: application/json
     "percentage": 100,
     "limitdate": "2022-02-02",
     "grafic": "ahksuhas",
-    "followers": 9000
+    "followers": 9000,
+    "email": "rovdsica@gmail.com"
 }
 
 
@@ -93,8 +93,8 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "rassaeekkess@gmail.com",
-    "password": "aaaY9*"
+    "email": "nike2@gmail.com",
+    "password": "Admin123!"
 }
 
 
@@ -172,13 +172,14 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/sponsors/profile/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
+PUT http://localhost:3000/api/sponsors/profile/42
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0MSwiZXhwaXJlZF9hdCI6MTYzMTk4NDEwNywiY3JlYXRlZF9hdCI6MTYzMTk4MDUwNywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTk4MDUwN30.LSsPKN5kQmIAxBrptjKQSgLe8_zChhsRg0SY8imSBUY
 Content-Type: application/json
 
 {
-    "company": "PUMITITA",
-    "logo": "AHSUHAU"
+    "company": "NAIK",
+    "logo": "AHSUHAU", 
+    "email": "nike3@gmail.com"
 }
 
 
