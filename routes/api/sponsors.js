@@ -1,8 +1,33 @@
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, getById, offerById, deleteAccount, editSponsor, editUser } = require('../../models/sponsor.model');
-const { newOffer } = require('../../models/user.model');
+const { sumParticipations, totalParticipations, updateParticipations } = require('../../models/athlete.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, getById, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
+
+
+// todos los deportistas
+
+router.get('/allAthletes', async (req, res) => {
+    try {
+        const result = await getAll();
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
+
+
+// ver un atleta 
+
+router.get('/athletes/:idAthlete', async (req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await getAthleteById(idAthlete);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message})
+    }
+});
 
 
 
@@ -60,10 +85,19 @@ router.get('/offer/:idOffer', async (req, res) => {
 
 // nueva oferta
 
-router.post('/newOffer', async (req, res) => {
+router.post('/newOffer/:idSponsor', async (req, res) => {
     try {
-        const result = await newOffer(req.body);
-        res.json(result);
+        const fk_sponsors = req.params.idSponsor;
+        const result = await newOffer(fk_sponsors, req.body);
+        const sumParticipations = await totalParticipations(req.body.fk_athletes);
+        console.log('Esto es sumParticipations', sumParticipations);
+        const participationsTotal = JSON.parse(sumParticipations[0]);
+        console.log('Esto es sumParticipations', participationsTotal);
+        // const participations = await updateParticipations(sumParticipations, req.body.fk_athletes);
+        // console.log(participations);
+        // const percentage = await updatePercentage(req.body.fk_athletes, participations)
+        // const result = await get,,,,athlete by id
+        // res.json(result);
     } catch (err) {
         res.json({error: err.message});
     }
@@ -100,6 +134,25 @@ router.put('/deleteaccount/:idSponsor', async (req, res) => {
 })
 
 
+// ver atletas ordenados por porcentaje 
+
+router.get('/athletesPercentage', async (req, res) => {
+    try {
+        const result = await orderByPercentage();
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+})
+
+
+
+// ver atletas ordenados por fecha de expiración
+
+router.get('/athletesLimitdate', async (req, res) => {
+    const result = await orderByLimitdate();
+    res.json(result);
+})
 
 
 module.exports = router;

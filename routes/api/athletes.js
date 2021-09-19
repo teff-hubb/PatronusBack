@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
 
-const { getAll, getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, orderByPercentage, orderByLimitdate, deleteAccount, editDatesAthlete, editDatesUser } = require('../../models/athlete.model');
+const { getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, deleteAccount, editDatesAthlete, editDatesUser, acceptOffer } = require('../../models/athlete.model');
+const { route } = require('./sponsors');
 
 
 // ver todos
@@ -39,14 +40,7 @@ router.get('/invertibles', async (req, res) => {
 
 
 
-router.get('/', async (req, res) => {
-    try {
-        const result = await getAll();
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-});
+
 
 
 
@@ -118,46 +112,10 @@ router.get('/mysponsors/:idAthlete', async (req, res) => {
 
 
 
-// ------------------------- ORDENAR --------------------------------- //
-
-
-// ver atletas ordenados por porcentaje 
-
-router.get('/percentage', async (req, res) => {
-    try {
-        const result = await orderByPercentage();
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-})
-
-
-
-// ver atletas ordenados por fecha de expiración
-
-router.get('/limitdate', async (req, res) => {
-    const result = await orderByLimitdate();
+router.put('/acceptOffer', async (req, res) => {
+    const result = await acceptOffer(req.body.id);
     res.json(result);
 })
-
-
-
-// ------------------------------------------------------------------- //
-
-
-// ver un atleta 
-
-router.get('/:idAthlete', async (req, res) => {
-    try {
-        const idAthlete = req.params.idAthlete;
-        const result = await getById(idAthlete);
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message})
-    }
-});
-
 
 
 

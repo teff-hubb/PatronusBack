@@ -7,11 +7,7 @@ const { executeQuery, executeUniqueQuery } = require("../helpers");
 
 // getAll
 
-const getAll = () => {
-        return executeQuery('SELECT * FROM athletes', 
-        []
-    );
-}
+
 // Recuperar athletes por country
 
 const getCountry = (nameCountry) => {
@@ -67,7 +63,7 @@ const getById = (athleteId) => {
 // getAllOffers
 
 const getAllOffers = (idAthlete) => {
-    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ?', 
+    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes, ats.id FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ?', 
     [idAthlete]);
 }
 
@@ -107,23 +103,11 @@ const getMySponsors = (idAthlete) => {
 
 
 
-// ordenar atletas por %invertido 
-
-
-const orderByPercentage = () => {
-        return executeQuery('SELECT name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers FROM patronus.athletes ORDER BY percentage DESC', []
-    );
-}
 
 
 
-// ordenar atletas por fecha de expiración de la inversión
 
 
-const orderByLimitdate = () => {
-        return executeQuery('SELECT * FROM patronus.athletes WHERE limitdate > now() ORDER by limitdate ASC', []
-    );
-}
 
 
 
@@ -151,14 +135,29 @@ const editDatesUser = (idAthlete, email) => {
 }
 
 
-
+const acceptOffer = (idOffer) => {
+        return executeQuery('UPDATE patronus.athletes_sponsors SET status = ? WHERE id = ?',
+        [1, idOffer]
+    )
+};
 
 
 
 // sumar participaciones 
 
-const sumParticipations = (fk_athlete, participations) => {
-    return executeQuery('', [fk_athlete, participations]);
+const totalParticipations = (fk_ahtletes) => {
+    return executeQuery('SELECT SUM(participations) FROM patronus.athletes_sponsors WHERE fk_athletes = ?',
+    [fk_ahtletes]
+   )
+};
+
+
+// actualizar participaciones tabla athlete 
+
+const updateParticipations = (sumParticipations, fk_athletes) => {
+        return executeQuery('UPDATE patronus.athletes SET quantitydemand = ? WHERE id = ?',
+        [sumParticipations, fk_athletes]
+    );
 }
 
 
@@ -190,5 +189,5 @@ const deleteAccount = (idAthlete) => {
 
 
 module.exports = {
-    getAll, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, orderByPercentage, orderByLimitdate, sumParticipations, restParticipations, deleteAccount, editDatesUser
+    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, restParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer
 }

@@ -1,26 +1,26 @@
 ### 
-GET http://localhost:3000/api/athletes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNzg5MDU4LCJjcmVhdGVkX2F0IjoxNjMxNzg1NDU4LCJpYXQiOjE2MzE3ODU0NTh9.pCoii-YSEpO39CGoxzmnlskzjWMyKBIJC5ZtzHiIxDk
+GET http://localhost:3000/api/sponsors/allAthletes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA0NzMxMiwiY3JlYXRlZF9hdCI6MTYzMjA0MzcxMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA0MzcxMn0.JN-ojCFHN8MAPC9QfdkCzmgiPGIcBgziiu3UWYaqjFI
 
 ### 
-GET http://localhost:3000/api/athletes/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+GET http://localhost:3000/api/sponsors/athletes/51
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA0NzMxMiwiY3JlYXRlZF9hdCI6MTYzMjA0MzcxMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA0MzcxMn0.JN-ojCFHN8MAPC9QfdkCzmgiPGIcBgziiu3UWYaqjFI
 
 
 ###
-GET http://localhost:3000/api/athletes/percentage
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+GET http://localhost:3000/api/sponsors/athletesPercentage
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA0NzMxMiwiY3JlYXRlZF9hdCI6MTYzMjA0MzcxMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA0MzcxMn0.JN-ojCFHN8MAPC9QfdkCzmgiPGIcBgziiu3UWYaqjFI
 
 ###
-GET http://localhost:3000/api/athletes/limitdate
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+GET http://localhost:3000/api/sponsors/athletesLimitdate
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA0NzMxMiwiY3JlYXRlZF9hdCI6MTYzMjA0MzcxMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA0MzcxMn0.JN-ojCFHN8MAPC9QfdkCzmgiPGIcBgziiu3UWYaqjFI
 
 
 
 
 ### 
-GET http://localhost:3000/api/athletes/allOffers/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQyMjMxLCJjcmVhdGVkX2F0IjoxNjMxNjM4NjMxLCJpYXQiOjE2MzE2Mzg2MzF9.6DccrZ8RsKlB6z-Mve6FJSeORt5aH0x1YC9cRCCYYSE
+GET http://localhost:3000/api/athletes/allOffers/49
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MSwiZXhwaXJlZF9hdCI6MTYzMjA1MDgwMiwiY3JlYXRlZF9hdCI6MTYzMjA0NzIwMiwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMjA0NzIwMn0.BdlGRLinJqOqVjNKQ5ylpM_eUkpYQkxqbl7mRw730gw
 ### 
 GET http://localhost:3000/api/athletes/offers/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
@@ -43,7 +43,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 
 ### 
 PUT http://localhost:3000/api/athletes/profile/52
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMTk4ODA4NiwiY3JlYXRlZF9hdCI6MTYzMTk4NDQ4NiwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTk4NDQ4Nn0.YiT7sy2Joo8f2dhmHCAlbjUiiX1DKwb40w_ucektDBk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MywiZXhwaXJlZF9hdCI6MTYzMjA5MzMyNCwiY3JlYXRlZF9hdCI6MTYzMjA4OTcyNCwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMjA4OTcyNH0.mBzZY-WNuec8XnJzmK4vWXCvkj1h_2EIT8F5epFrVw8
 Content-Type: application/json
 
 {
@@ -61,6 +61,15 @@ Content-Type: application/json
     "email": "rsica@gmail.com"
 }
 
+
+###
+PUT http://localhost:3000/api/athletes/acceptOffer
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MywiZXhwaXJlZF9hdCI6MTYzMjA5MzM4NCwiY3JlYXRlZF9hdCI6MTYzMjA4OTc4NCwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMjA4OTc4NH0.1nQAyQdiNfF09LPwLnjMdNEU-DOVjX8mJ8z36kYQ7Ko
+
+{
+    "id": 44
+}
 
 
 ### 
@@ -93,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "tipitent@gmail.com",
+    "email": "isabel@gmail.com",
     "password": "Admin123!"
 }
 
@@ -135,13 +144,13 @@ Content-Type: application/json
 
 
 ### 
-GET http://localhost:3000/api/sponsors/myathletes/4
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZF9hdCI6MTYzMTg3OTQ4OCwiY3JlYXRlZF9hdCI6MTYzMTg3NTg4OCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTg3NTg4OH0.xsHmCo8nNMOqT7tNTGbDBJ4q-QX4kbCI3zXBVjCDHpQ
+GET http://localhost:3000/api/sponsors/myathletes/49
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA1Mzc1MywiY3JlYXRlZF9hdCI6MTYzMjA1MDE1MywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA1MDE1M30.vnYQpw-9lKWYL9sH1gQkZiJrTayHw3xc3ixSemz2KJo
 
 
 ### 
-GET http://localhost:3000/api/sponsors/myAllOffers/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZF9hdCI6MTYzMTg3OTQ4OCwiY3JlYXRlZF9hdCI6MTYzMTg3NTg4OCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMTg3NTg4OH0.xsHmCo8nNMOqT7tNTGbDBJ4q-QX4kbCI3zXBVjCDHpQ
+GET http://localhost:3000/api/sponsors/myAllOffers/51
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA2Mjg1OCwiY3JlYXRlZF9hdCI6MTYzMjA1OTI1OCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA1OTI1OH0.VGM2WyFgin7VXhidOpHEFcSVT5wno1iVA6iXx_yN5Z4
 
 ### 
 GET http://localhost:3000/api/sponsors/myOffersRejecteds/1
@@ -159,16 +168,13 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMSwiZXhwaXJlZ
 
 
 ###
-POST http://localhost:3000/api/sponsors/newOffer
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjUwNzgyLCJjcmVhdGVkX2F0IjoxNjMxNjQ3MTgyLCJpYXQiOjE2MzE2NDcxODJ9.AwPKJ0LTAAr4kC-oJLgD0FaxUnZHw3Q-jI8YQFgICWM
+POST http://localhost:3000/api/sponsors/newOffer/46
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA4MTU1MiwiY3JlYXRlZF9hdCI6MTYzMjA3Nzk1MiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA3Nzk1Mn0.iFL3MfUvaqCIZ55POgcsBvzZNhDbofweXzM0BrOGGIQ
 Content-Type: application/json
 
 {
-    "id": 8,
-    "fk_athletes": "3",
     "fk_sponsors": "2",
-    "participations": "1888800",
-    "status": "0"
+    "participations": "1888800"
 }
 
 ###
