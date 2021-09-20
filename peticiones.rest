@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "isabel@gmail.com",
+    "email": "head@gmail.com",
     "password": "Admin123!"
 }
 
@@ -119,8 +119,6 @@ Content-Type: application/json
     "participations": "100",
     "status": "1"
 }
-
-
 
 
 ### 

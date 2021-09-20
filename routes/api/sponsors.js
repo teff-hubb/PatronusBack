@@ -1,4 +1,4 @@
-const { sumParticipations, totalParticipations, updateParticipations } = require('../../models/athlete.model');
+const { totalParticipations, updateParticipations } = require('../../models/athlete.model');
 const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, getById, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
@@ -83,6 +83,9 @@ router.get('/offer/:idOffer', async (req, res) => {
 })
 
 
+
+
+
 // nueva oferta
 
 router.post('/newOffer/:idSponsor', async (req, res) => {
@@ -153,6 +156,7 @@ router.get('/athletesLimitdate', async (req, res) => {
     const result = await orderByLimitdate();
     res.json(result);
 })
+
 
 
 module.exports = router;
