@@ -158,6 +158,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVkX2F0IjoxNjMxNjQy
 PUT http://localhost:3000/api/athletes/deleteaccount/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMTg3NTYyMywiY3JlYXRlZF9hdCI6MTYzMTg3MjAyMywidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMTg3MjAyM30.USDvxncuV6O4YPtPx_o15ei8Bo6oX5Ppj2sKaMpLr1g
 
+###
+GET http://localhost:3000/api/sponsors/49
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0OSwiZXhwaXJlZF9hdCI6MTYzMjEyOTY4MiwiY3JlYXRlZF9hdCI6MTYzMjEyNjA4MiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjEyNjA4Mn0.g7CGdk1ONd-EkicgolwvmClBObC_MiA6VcY2e1U3htc
 
 
 ### 

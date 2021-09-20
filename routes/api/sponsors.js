@@ -1,5 +1,5 @@
 const { totalParticipations, updateParticipations } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, getById, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
@@ -82,6 +82,36 @@ router.get('/offer/:idOffer', async (req, res) => {
     }
 })
 
+// ver atletas ordenados por fecha de expiración
+
+router.get('/athletesLimitdate', async (req, res) => {
+    const result = await orderByLimitdate();
+    res.json(result);
+})
+
+
+
+
+// ver atletas ordenados por porcentaje 
+
+router.get('/athletesPercentage', async (req, res) => {
+    try {
+        const result = await orderByPercentage();
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+})
+
+
+// sponsor por Id 
+
+router.get('/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getById(idSponsor);
+    res.json(result);
+    console.log(result);
+})
 
 
 
@@ -137,25 +167,9 @@ router.put('/deleteaccount/:idSponsor', async (req, res) => {
 })
 
 
-// ver atletas ordenados por porcentaje 
-
-router.get('/athletesPercentage', async (req, res) => {
-    try {
-        const result = await orderByPercentage();
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-})
 
 
 
-// ver atletas ordenados por fecha de expiración
-
-router.get('/athletesLimitdate', async (req, res) => {
-    const result = await orderByLimitdate();
-    res.json(result);
-})
 
 
 
