@@ -171,10 +171,35 @@ const getSports = () => {
 
 
 
+// añadir favorito 
+
+const addFavorite = (fk_athletes,  {fk_sponsors}) => {
+        return executeQuery('INSERT INTO patronus.favorites (fk_athletes, fk_sponsors, favorite) VALUES (?, ?, 1)',
+        [fk_athletes, fk_sponsors]
+    );
+}
+
+
+// quitar favorito 
+
+const revertFavorite = (fk_athletes, { fk_sponsors }) => {
+        return executeQuery('UPDATE patronus.favorites SET favorite = 0 WHERE fk_athletes = ? AND fk_sponsors = ?',
+        [fk_athletes, fk_sponsors]
+    )
+}
+
+
+// recuperar mis favoritos
+
+const myFavorites = ({ fk_sponsors }) => {
+        return executeQuery('SELECT patronus.favorites WHERE fk_sponsors = ?',
+        [fk_sponsors]
+    )
+}
 
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addFavorite, revertFavorite, myFavorites
 
 }

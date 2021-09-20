@@ -1,5 +1,5 @@
 const { totalParticipations, updateParticipations } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, addFavorite, revertFavorite } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
@@ -228,11 +228,10 @@ router.put('/profile/:idSponsor', upload.single('logo'), async (req, res) => {
 
 // darse de baja
 
-router.put('/deleteaccount/:idSponsor', async (req, res) => {
+router.put('/deleteAccount/:idSponsor', async (req, res) => {
     try {
         const idSponsor = req.params.idSponsor;
         const result = await deleteAccount(idSponsor);
-        console.log(result);
         res.json(result);
     } catch (err) {
         res.json({error: err.message});
@@ -242,7 +241,30 @@ router.put('/deleteaccount/:idSponsor', async (req, res) => {
 
 
 
+// añadir favorito 
 
+router.post('/addAthleteFavorite/:idAthlete', async(req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await addFavorite(idAthlete, req.body);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
+
+
+// quitar favorito 
+
+router.put('/removeAthleteFavorite/:idAthlete', async(req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await revertFavorite(idAthlete, req.body);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
 
 
 

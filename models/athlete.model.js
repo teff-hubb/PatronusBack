@@ -55,29 +55,6 @@ const getMySponsors = (idAthlete) => {
 
 
 
-
-// ------------------------- ORDENAR --------------------------------- //
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ------------------------------------------------------------------- //
-
-  
-
-
-
-
-
 // editProfile
 
 const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers }) => {

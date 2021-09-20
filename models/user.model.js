@@ -4,7 +4,7 @@ const { executeQuery, executeUniqueQuery } = require("../helpers");
 
 // create athlete table athlete
 const createAthlete = ({ nombre, apellidos, edad }) => {
-        return executeQuery('INSERT INTO patronus.athletes (name, surname, age, status) VALUES (?, ?, ?, ?)', [nombre, apellidos, edad, 1]
+        return executeQuery('INSERT INTO patronus.athletes (name, surname, age, status, quantitydemand, percentage) VALUES (?, ?, ?, ?, ?, ?)', [nombre, apellidos, edad, 1, 1000, 100]
     );
 }
 
