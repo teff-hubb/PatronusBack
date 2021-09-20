@@ -1,8 +1,11 @@
 const { totalParticipations, updateParticipations } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'public/images' });
 
 
 // todos los deportistas
@@ -16,32 +19,6 @@ router.get('/allAthletes', async (req, res) => {
     }
 });
 
-
-// ver un atleta 
-
-router.get('/athletes/:idAthlete', async (req, res) => {
-    try {
-        const idAthlete = req.params.idAthlete;
-        const result = await getAthleteById(idAthlete);
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message})
-    }
-});
-
-
-
-// deportistas invertidos
-
-router.get('/myathletes/:idSponsor', async (req, res) => {
-    try {
-        const idSponsor = req.params.idSponsor;
-        const result = await getMyAthletes(idSponsor);
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-});
 
 
 
@@ -104,6 +81,96 @@ router.get('/athletesPercentage', async (req, res) => {
 })
 
 
+
+
+
+
+
+// ver todos
+
+router.get('/athletes/filterCountry/:nameCountry', async (req, res) => {
+    try {
+        const nameCountry = req.params.nameCountry;// extraer el nombre del pais de la ruta
+        const result = await getAthletesByCountry(nameCountry);
+        res.json(result);
+
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+});
+
+
+router.get('/athletes/filterSport/:nameSport', async (req, res) => {
+    try {
+        const nameSport = req.params.nameSport;
+        const result = await getAthletesBySport(nameSport);
+        res.json(result);
+    } catch (err) {
+        res.json({ error: err.message });
+
+    }
+});
+
+
+
+router.get('/athletes/countries', async (req, res) => {
+    const result = await getCountries();
+    console.log(result);
+    res.json(result);
+});
+
+
+router.get('/athletes/sports', async (req, res) => {
+    const result = await getSports();
+    res.json(result);
+});
+
+router.get('/athletes/invertibles', async (req, res) => {
+    const result = await getInvertible();
+    res.json(result);
+    console.log(result);
+});
+
+
+router.get('/athletes/noInvertibles', async (req, res) => {
+    const result = await getNoInvertibles();
+    res.json(result);
+    console.log(result);
+});
+
+
+
+
+
+// ver un atleta 
+
+router.get('/athletes/:idAthlete', async (req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await getAthleteById(idAthlete);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message})
+    }
+});
+
+
+
+// deportistas invertidos
+
+router.get('/myathletes/:idSponsor', async (req, res) => {
+    try {
+        const idSponsor = req.params.idSponsor;
+        const result = await getMyAthletes(idSponsor);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
+
+
+
+
 // sponsor por Id 
 
 router.get('/:idSponsor', async (req, res) => {
@@ -140,7 +207,13 @@ router.post('/newOffer/:idSponsor', async (req, res) => {
 
 // editar perfil 
 
-router.put('/profile/:idSponsor', async (req, res) => {
+router.put('/profile/:idSponsor', upload.single('logo'), async (req, res) => {
+    // console.log(req.body, req.file);
+    const extension = '.' + req.file.mimetype.split('/')[1];
+    const newName = req.file.filename + extension;
+    const path = req.file.path + extension;
+    fs.renameSync(req.file.path, path);
+    req.body.logo = req.file.path + newName;
     try {
         const idSponsor = req.params.idSponsor;
         const sponsorChanged = await editSponsor(idSponsor, req.body);

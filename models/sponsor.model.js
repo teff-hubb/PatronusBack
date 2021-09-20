@@ -120,8 +120,61 @@ const orderByLimitdate = () => {
 }
 
 
+// Recuperar athletes por country
+
+const getAthletesByCountry = (nameCountry) => {
+        return executeQuery('SELECT * FROM patronus.athletes WHERE country = ?',
+        [nameCountry]
+    )
+};
+
+// Recuperar athletes por sport
+
+const getAthletesBySport = (nameSport) => {
+        return executeQuery('SELECT * FROM patronus.athletes WHERE SPORT = ?',
+        [nameSport]
+    )
+};
+
+// recuperar athletes invertibles
+
+const getInvertible = () => {
+        return executeQuery('SELECT * FROM patronus.athletes WHERE limitdate > now()', 
+        []
+    )
+};
+
+
+// recuperar athletes no invertibles
+
+const getNoInvertibles = () => {
+        return executeQuery('SELECT * FROM patronus.athletes WHERE limitdate < now()', 
+        []
+    )
+};
+
+
+// recuperar los países a los que pertecenen los athletes
+
+const getCountries = () => {
+        return executeQuery('SELECT DISTINCT country FROM patronus.athletes', 
+        []
+    );
+}
+
+
+const getSports = () => {
+        return executeQuery('SELECT DISTINCT sport FROM patronus.athletes',
+        []
+    );
+}
+
+
+
+
+
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles
 
 }

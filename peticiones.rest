@@ -16,11 +16,11 @@ GET http://localhost:3000/api/sponsors/athletesLimitdate
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA0NzMxMiwiY3JlYXRlZF9hdCI6MTYzMjA0MzcxMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA0MzcxMn0.JN-ojCFHN8MAPC9QfdkCzmgiPGIcBgziiu3UWYaqjFI
 
 
-
-
 ### 
 GET http://localhost:3000/api/athletes/allOffers/49
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MSwiZXhwaXJlZF9hdCI6MTYzMjA1MDgwMiwiY3JlYXRlZF9hdCI6MTYzMjA0NzIwMiwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMjA0NzIwMn0.BdlGRLinJqOqVjNKQ5ylpM_eUkpYQkxqbl7mRw730gw
+
+
 ### 
 GET http://localhost:3000/api/athletes/offers/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHBpcmVkX2F0IjoxNjMxNTQ0MDI5LCJjcmVhdGVkX2F0IjoxNjMxNTQzNzI5LCJpYXQiOjE2MzE1NDM3Mjl9.lq-P9mRgcbdDG8ZzJFLfAF-I5V_rty4a8SonVtPUB3I
@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "head@gmail.com",
+    "email": "fila@gmail.com",
     "password": "Admin123!"
 }
 
@@ -139,6 +139,35 @@ Content-Type: application/json
     "graphic": "jasijailjs",
     "followers": 130
 }
+
+
+###
+GET http://localhost:3000/api/sponsors/athletes/filterCountry/France
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
+
+###
+GET http://localhost:3000/api/sponsors/athletes/filterSport/Basket
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
+
+
+###
+GET http://localhost:3000/api/sponsors/athletes/invertibles
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
+
+###
+GET http://localhost:3000/api/sponsors/athletes/noInvertibles
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE2MTE5MCwiY3JlYXRlZF9hdCI6MTYzMjE1NzU5MCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1NzU5MH0.5Gwt4-SVPI09Kyoe3YpA7jfQXU8cjbBiKIB7UIdtDGo
+
+###
+GET http://localhost:3000/api/sponsors/athletes/countries
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
+
+
+###
+GET http://localhost:3000/api/sponsors/athletes/sports
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
+
+
 
 
 ### 
