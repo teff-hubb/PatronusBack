@@ -65,10 +65,10 @@ const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country
 
 
 const editDatesUser = (idAthlete, email) => {
-    return executeQuery('UPDATE patronus.users SET email = ? WHERE fk_athlete = ?',
-    [email, idAthlete]
-);
-}
+        return executeQuery('UPDATE patronus.users SET email = ? WHERE fk_athlete = ?',
+        [email, idAthlete]
+    )
+};
 
 
 const acceptOffer = (idOffer) => {
@@ -78,11 +78,18 @@ const acceptOffer = (idOffer) => {
 };
 
 
+const rejectOffer = (idOffer) => {
+        return executeQuery('UPDATE patronus.athletes_sponsors SET status = ? WHERE id = ?',
+        [2, idOffer]
+    )
+};
+
+
 
 // sumar participaciones 
 
 const totalParticipations = (fk_ahtletes) => {
-    return executeQuery('SELECT SUM(participations) FROM patronus.athletes_sponsors WHERE fk_athletes = ?',
+    return executeQuery('SELECT SUM(participations) as "total" FROM patronus.athletes_sponsors WHERE fk_athletes = ? AND NOT status = 2',
     [fk_ahtletes]
    )
 };
@@ -90,23 +97,20 @@ const totalParticipations = (fk_ahtletes) => {
 
 // actualizar participaciones tabla athlete 
 
-const updateParticipations = (sumParticipations, fk_athletes) => {
+const updateParticipations = (quantityDemand, fk_athletes) => {
         return executeQuery('UPDATE patronus.athletes SET quantitydemand = ? WHERE id = ?',
-        [sumParticipations, fk_athletes]
+        [quantityDemand, fk_athletes]
     );
 }
 
+const updatePercentage = (percentageTotal, fk_athlete) => {
+        return executeQuery('UPDATE patronus.athletes SET percentage = ? WHERE id = ?',
+        [percentageTotal, fk_athlete]
+    )
+};
 
 
 
-
-// restar participaciones
-
-// En principio dejarlo SIN utilidad
-
-const restParticipations = (fk_athlete, participations) => {
-    return executeQuery('', [fk_athlete, participations]);
-}
 
 
 
@@ -125,5 +129,5 @@ const deleteAccount = (idAthlete) => {
 
 
 module.exports = {
-    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, restParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer
+    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer, updatePercentage, rejectOffer
 }

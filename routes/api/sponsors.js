@@ -1,11 +1,45 @@
-const { totalParticipations, updateParticipations } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, addFavorite, revertFavorite } = require('../../models/sponsor.model');
+const { totalParticipations, updateParticipations, updatePercentage } = require('../../models/athlete.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, getMyFavorites, getSportsSponsors, getFavoriteSportsSponsors, addAthleteFavorite, addSportFavorite } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'public/images' });
+
+const nodemailer = require("nodemailer");
+
+
+router.post("/send-email", (req, res) => {
+    let transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: {
+            user: "dedric.moen56@ethereal.email",
+            pass: "79VFVym4kFZdjcj4Sk"
+        }
+    });
+    
+    let mailOptions = {
+        from: "Patronus",
+        to: "patronus.spain@gmail.com",
+        subject: "Enviado desde nodemailer",
+        text: "Hola Mundo!"
+    }
+    
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error) {
+            res.status(500).send(error.message);
+        } else {
+            console.log("Email enviado.");
+            res.status(200).jsonp(req.body);
+        }
+    })
+});
+
+
 
 
 // todos los deportistas
@@ -169,6 +203,26 @@ router.get('/myathletes/:idSponsor', async (req, res) => {
 });
 
 
+// recuperar favoritos 
+
+router.get('/myFavorites/:idSponsor', async(req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getMyFavorites(idSponsor);
+    res.json(result);
+})
+
+
+router.get('/sportsSponsors', async (req, res) => {
+    const result = await getSportsSponsors();
+    res.json(result);
+})
+
+router.get('/sportsBySponsor/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getFavoriteSportsSponsors(idSponsor);
+    res.json(result);
+})
+
 
 
 // sponsor por Id 
@@ -190,18 +244,49 @@ router.post('/newOffer/:idSponsor', async (req, res) => {
         const fk_sponsors = req.params.idSponsor;
         const result = await newOffer(fk_sponsors, req.body);
         const sumParticipations = await totalParticipations(req.body.fk_athletes);
-        console.log('Esto es sumParticipations', sumParticipations);
-        const participationsTotal = JSON.parse(sumParticipations[0]);
-        console.log('Esto es sumParticipations', participationsTotal);
-        // const participations = await updateParticipations(sumParticipations, req.body.fk_athletes);
-        // console.log(participations);
-        // const percentage = await updatePercentage(req.body.fk_athletes, participations)
-        // const result = await get,,,,athlete by id
-        // res.json(result);
+        const sumParticipationsNumber = Number(sumParticipations[0].total);
+        const quantityDemand = 1000 - sumParticipationsNumber;
+        const participations = await updateParticipations(quantityDemand, req.body.fk_athletes);
+        const percentageTotal = sumParticipationsNumber * 0.1;
+        const percentage = await updatePercentage(percentageTotal, req.body.fk_athletes)
+        res.json(percentage);
     } catch (err) {
         res.json({error: err.message});
     }
 })
+
+
+
+// añadir favorito 
+
+router.post('/addAthleteFavorite/:idAthlete', async(req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await addAthleteFavorite(idAthlete, req.body);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
+
+
+
+// añadir un deporte
+
+router.post('/addSportFavorite/:idSponsor', async(req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await addSportFavorite(idSponsor, req.body);
+    res.json(result);
+})
+
+
+
+// añadir múltiples deportes
+
+
+
+
+
 
 
 
@@ -241,30 +326,18 @@ router.put('/deleteAccount/:idSponsor', async (req, res) => {
 
 
 
-// añadir favorito 
 
-router.post('/addAthleteFavorite/:idAthlete', async(req, res) => {
-    try {
-        const idAthlete = req.params.idAthlete;
-        const result = await addFavorite(idAthlete, req.body);
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-});
+// // quitar favorito 
 
-
-// quitar favorito 
-
-router.put('/removeAthleteFavorite/:idAthlete', async(req, res) => {
-    try {
-        const idAthlete = req.params.idAthlete;
-        const result = await revertFavorite(idAthlete, req.body);
-        res.json(result);
-    } catch (err) {
-        res.json({error: err.message});
-    }
-});
+// router.put('/removeAthleteFavorite/:idAthlete', async(req, res) => {
+//     try {
+//         const idAthlete = req.params.idAthlete;
+//         const result = await revertFavorite(idAthlete, req.body);
+//         res.json(result);
+//     } catch (err) {
+//         res.json({error: err.message});
+//     }
+// });
 
 
 

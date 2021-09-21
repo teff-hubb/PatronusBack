@@ -169,37 +169,61 @@ const getSports = () => {
     );
 }
 
+const getSportsSponsors = () => {
+        return executeQuery('SELECT item_id, item_text FROM patronus.sports', 
+        []
+    )
+};
+
+const getFavoriteSportsSponsors = (fk_sponsors) => {
+        return executeQuery('SELECT s.item_id, s.item_text FROM patronus.sports s, patronus.sponsors_sports ss WHERE ss.fk_sponsors = ? AND s.item_id = ss.fk_sport', 
+        [fk_sponsors]
+    )
+};
 
 
-// añadir favorito 
 
-const addFavorite = (fk_athletes,  {fk_sponsors}) => {
+// añadir deporte favorito 
+
+const addSportFavorite = (fk_sponsors, {fk_sport}) => {
+    return executeQuery('INSERT INTO patronus.sponsors_sports (fk_sponsors, fk_sport) VALUES (?, ?)', 
+    [fk_sponsors, fk_sport]
+)
+};
+
+
+
+// añadir atleta favorito 
+
+const addAthleteFavorite = (fk_athletes,  {fk_sponsors}) => {
         return executeQuery('INSERT INTO patronus.favorites (fk_athletes, fk_sponsors, favorite) VALUES (?, ?, 1)',
         [fk_athletes, fk_sponsors]
     );
 }
 
+// // quitar atleta favorito 
 
-// quitar favorito 
-
-const revertFavorite = (fk_athletes, { fk_sponsors }) => {
-        return executeQuery('UPDATE patronus.favorites SET favorite = 0 WHERE fk_athletes = ? AND fk_sponsors = ?',
-        [fk_athletes, fk_sponsors]
-    )
-}
+// const revertFavorite = (fk_athletes, { fk_sponsors }) => {
+//         return executeQuery('UPDATE patronus.favorites SET favorite = 0 WHERE fk_athletes = ? AND fk_sponsors = ?',
+//         [fk_athletes, fk_sponsors]
+//     )
+// }
 
 
-// recuperar mis favoritos
 
-const myFavorites = ({ fk_sponsors }) => {
-        return executeQuery('SELECT patronus.favorites WHERE fk_sponsors = ?',
+// recuperar mis atletas favoritos
+
+const getMyFavorites = (fk_sponsors) => {
+        return executeQuery('SELECT at.name, at.surname, at.sport, at.country, at.percentage, at.quantitydemand FROM patronus.athletes at, patronus.favorites f WHERE fk_sponsors = ? AND f.fk_athletes = at.id AND favorite = 1',
         [fk_sponsors]
     )
 }
 
 
 
+
+
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addFavorite, revertFavorite, myFavorites
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addAthleteFavorite, getMyFavorites, getSportsSponsors, getFavoriteSportsSponsors, addSportFavorite
 
 }

@@ -227,7 +227,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ###
-POST http://localhost:3000/api/sponsors//addAthleteFavorite/49
+POST http://localhost:3000/api/sponsors/addAthleteFavorite/49
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE3OTQwNywiY3JlYXRlZF9hdCI6MTYzMjE3NTgwNywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE3NTgwN30.kmd1ZcZE_5vWnCiZEOifa6DTY8ofSOHQkGmmCIOlkCo
 
@@ -244,6 +244,35 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 {
     "fk_sponsors": 51
 }
+
+
+
+###
+GET http://localhost:3000/api/sponsors/sportsSponsors
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIzMTUxMSwiY3JlYXRlZF9hdCI6MTYzMjIyNzkxMSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIyNzkxMX0.XLLD35pRQA_BGLxkmLFXjHJNdGQgZQ4T-RdD9k3FLeE
+
+
+###
+GET http://localhost:3000/api/sponsors/sportsBySponsor/49
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIzMTUxMSwiY3JlYXRlZF9hdCI6MTYzMjIyNzkxMSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIyNzkxMX0.XLLD35pRQA_BGLxkmLFXjHJNdGQgZQ4T-RdD9k3FLeE
+
+
+###
+POST http://localhost:3000/api/sponsors/addSportFavorite/51
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIzNjA0OSwiY3JlYXRlZF9hdCI6MTYzMjIzMjQ0OSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIzMjQ0OX0.EayECiY3c8zcPMhEtKJz9xty_UC_j-gmI2D1do9TimQ
+
+{
+    "fk_sport": "6"
+}
+
+
+
+
+###
+POST http://localhost:3000/api/sponsors/send-email
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIyMTE2MSwiY3JlYXRlZF9hdCI6MTYzMjIxNzU2MSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIxNzU2MX0.sMCE-Y9OzLhOSnqWkblI_DiwlUbXK3f35e8RyxcTBH4
+
 
 
 
