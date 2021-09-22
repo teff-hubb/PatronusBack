@@ -1,10 +1,14 @@
 const router = require('express').Router();
 
 
-const { getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, deleteAccount, editDatesAthlete, editDatesUser, acceptOffer } = require('../../models/athlete.model');
+const { getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, deleteAccount, editDatesAthlete, editDatesUser, acceptOffer, rejectOffer, createNew } = require('../../models/athlete.model');
 const { route } = require('./sponsors');
 
 
+
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: 'public/images' });
 
 
 
@@ -76,8 +80,34 @@ router.get('/mysponsors/:idAthlete', async (req, res) => {
 
 
 
-router.put('/acceptOffer', async (req, res) => {
-    const result = await acceptOffer(req.body.id);
+
+router.post('/createNew/:idAthlete', upload.single('photo'), async(req, res) => {
+    const extension = '.' + req.file.mimetype.split('/')[1];
+    const newName = req.file.filename + extension;
+    const path = req.file.path + extension;
+    fs.renameSync(req.file.path, path);
+    req.body.photo = req.file.path + newName;
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await createNew(idAthlete, req.body);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message})
+    }
+});
+
+
+
+
+router.put('/acceptOffer/:idOffer', async (req, res) => {
+    const idOffer = req.params.idOffer;
+    const result = await acceptOffer(idOffer);
+    res.json(result);
+})
+
+router.put('/rejectOffer/:idOffer', async (req, res) => {
+    const idOffer = req.params.idOffer;
+    const result = await rejectOffer(idOffer);
     res.json(result);
 })
 
@@ -86,7 +116,13 @@ router.put('/acceptOffer', async (req, res) => {
 
 // editar perfil
 
-router.put('/profile/:idAthlete', async (req, res) => {
+router.put('/profile/:idAthlete', upload.single('photo'), async (req, res) => {
+    console.log(req.body, req.file);
+    const extension = '.' + req.file.mimetype.split('/')[1];
+    const newName = req.file.filename + extension;
+    const path = req.file.path + extension;
+    fs.renameSync(req.file.path, path);
+    req.body.photo = req.file.path + newName;
     try {
         const idAthlete = req.params.idAthlete;
         const athleteChanged = await editDatesAthlete(idAthlete, req.body);
@@ -100,7 +136,7 @@ router.put('/profile/:idAthlete', async (req, res) => {
 
 
 
-router.put('/deleteaccount/:idAthlete', async (req, res) => {
+router.put('/deleteAccount/:idAthlete', async (req, res) => {
     try {
         const idAthlete = req.params.idAthlete;
         const result = await deleteAccount(idAthlete);
@@ -109,10 +145,6 @@ router.put('/deleteaccount/:idAthlete', async (req, res) => {
         res.json({error: err.message});
     }
 })
-
-
-
-
 
 
 

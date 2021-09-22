@@ -85,16 +85,24 @@ const getByIdSponsor = (idSponsor) => {
     // Como administrador, Patronus puede rechazar la oferta. Entonces --- changeStatus + resta. 
 
 const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) => {
-        executeQuery('UPDATE patronus.athletes_sponsors SET fk_athletes = ?, fk_sponsors = ?, participations = ?, status = ? WHERE id = ?',
+        return executeQuery('UPDATE patronus.athletes_sponsors SET fk_athletes = ?, fk_sponsors = ?, participations = ?, status = ? WHERE id = ?',
         [fk_athletes, fk_sponsors, participations, status, id]
     );
 }
 
 
 
+// recuperar todas las noticias
+
+const getAthletesNews = () => {
+    return executeQuery('SELECT * FROM patronus.athletes_news',
+    []
+)
+};
+
 
 
 
 module.exports = {
-    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor
+    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor, getAthletesNews
 }

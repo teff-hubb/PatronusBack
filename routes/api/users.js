@@ -1,9 +1,17 @@
 const { createToken } = require('../../helpers');
-const { getByEmail, changeStatus, createAthlete, registerUser, createSponsor } = require('../../models/user.model');
+const { getByEmail, changeStatus, createAthlete, registerUser, createSponsor, getAthletesNews } = require('../../models/user.model');
 const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 
 const router = require('express').Router();
+
+
+// get
+
+router.get('/news', async (req, res) => {
+    const result = await getAthletesNews();
+    res.json(result);
+});
 
 
 // register
@@ -92,6 +100,12 @@ router.put('/offers', async (req, res) => {
     res.json(result);
 })
 
+
+
+router.get('/news', async (req, res) => {
+    const result = await getAthletesNews();
+    res.json(result);
+});
 
 
 

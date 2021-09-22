@@ -213,7 +213,7 @@ const addAthleteFavorite = (fk_athletes,  {fk_sponsors}) => {
 
 // recuperar mis atletas favoritos
 
-const getMyFavorites = (fk_sponsors) => {
+const getMyAthletesFavorites = (fk_sponsors) => {
         return executeQuery('SELECT at.name, at.surname, at.sport, at.country, at.percentage, at.quantitydemand FROM patronus.athletes at, patronus.favorites f WHERE fk_sponsors = ? AND f.fk_athletes = at.id AND favorite = 1',
         [fk_sponsors]
     )
@@ -224,6 +224,6 @@ const getMyFavorites = (fk_sponsors) => {
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addAthleteFavorite, getMyFavorites, getSportsSponsors, getFavoriteSportsSponsors, addSportFavorite
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addAthleteFavorite, getMyAthletesFavorites, getSportsSponsors, getFavoriteSportsSponsors, addSportFavorite
 
 }

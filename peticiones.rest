@@ -168,8 +168,6 @@ GET http://localhost:3000/api/sponsors/athletes/sports
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE1NDMyMiwiY3JlYXRlZF9hdCI6MTYzMjE1MDcyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE1MDcyMn0.49fdCbK2NwWcsLekEnZlTsImxV2lWkpk74URnUEhV28
 
 
-
-
 ### 
 GET http://localhost:3000/api/sponsors/myathletes/49
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA1Mzc1MywiY3JlYXRlZF9hdCI6MTYzMjA1MDE1MywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA1MDE1M30.vnYQpw-9lKWYL9sH1gQkZiJrTayHw3xc3ixSemz2KJo
@@ -265,7 +263,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 {
     "fk_sport": "6"
 }
-
 
 
 

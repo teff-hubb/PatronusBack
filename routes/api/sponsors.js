@@ -1,5 +1,5 @@
 const { totalParticipations, updateParticipations, updatePercentage } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, getMyFavorites, getSportsSponsors, getFavoriteSportsSponsors, addAthleteFavorite, addSportFavorite } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, getSportsSponsors, getFavoriteSportsSponsors, addAthleteFavorite, addSportFavorite, getMyAthletesFavorites } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
@@ -203,13 +203,14 @@ router.get('/myathletes/:idSponsor', async (req, res) => {
 });
 
 
-// recuperar favoritos 
+// recuperar atletas favoritos 
 
 router.get('/myFavorites/:idSponsor', async(req, res) => {
     const idSponsor = req.params.idSponsor;
-    const result = await getMyFavorites(idSponsor);
+    const result = await getMyAthletesFavorites(idSponsor);
     res.json(result);
 })
+
 
 
 router.get('/sportsSponsors', async (req, res) => {
@@ -283,9 +284,7 @@ router.post('/addSportFavorite/:idSponsor', async(req, res) => {
 
 // añadir múltiples deportes
 
-
-
-
+    // utilizar función addSportFavorite dentro de un bucle
 
 
 

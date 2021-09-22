@@ -22,7 +22,7 @@ const getById = (athleteId) => {
 // getAllOffers
 
 const getAllOffers = (idAthlete) => {
-    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes, ats.id FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ?', 
+    return executeQuery('SELECT ats.participations, ats.status, s.company, s.logo, ats.fk_athletes, ats.id FROM patronus.athletes_sponsors ats, patronus.sponsors s WHERE ats.fk_sponsors = s.id AND ats.fk_athletes = ? AND NOT ats.status = 2', 
     [idAthlete]);
 }
 
@@ -113,6 +113,14 @@ const updatePercentage = (percentageTotal, fk_athlete) => {
 
 
 
+// crear noticia 
+
+const createNew = (fk_athletes, {summary, photo, username}) => {
+        return executeQuery('INSERT INTO patronus.athletes_news (fk_athletes, username, summary, photo) VALUES (?, ?, ?, ?)',
+        [fk_athletes, username, summary, photo]
+    )   
+};
+
 
 
 
@@ -125,9 +133,6 @@ const deleteAccount = (idAthlete) => {
 
 
 
-
-
-
 module.exports = {
-    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer, updatePercentage, rejectOffer
+    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer, updatePercentage, rejectOffer, createNew
 }
