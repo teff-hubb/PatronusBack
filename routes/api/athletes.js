@@ -122,7 +122,7 @@ router.put('/profile/:idAthlete', upload.single('photo'), async (req, res) => {
     const newName = req.file.filename + extension;
     const path = req.file.path + extension;
     fs.renameSync(req.file.path, path);
-    req.body.photo = req.file.path + newName;
+    req.body.photo = 'images/' + newName;
     try {
         const idAthlete = req.params.idAthlete;
         const athleteChanged = await editDatesAthlete(idAthlete, req.body);

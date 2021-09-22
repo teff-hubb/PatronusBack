@@ -64,9 +64,9 @@ const getMyOffersRejecteds = (idSponsor) => {
 
 // editar perfil 
 
-const editSponsor = (idSponsor, {company, logo}) => {
-        return executeQuery('UPDATE patronus.sponsors SET company = ?, logo = ? WHERE id = ?',
-        [company, logo, idSponsor],
+const editSponsor = (idSponsor, {company, logo, country, address, city, postalcode, aboutme}) => {
+        return executeQuery('UPDATE patronus.sponsors SET company = ?, logo = ?, country = ?, address = ?, city = ?, postalcode = ?, aboutme = ? WHERE id = ?',
+        [company, logo, country, address, city, postalcode, aboutme, idSponsor],
     );
 }
 

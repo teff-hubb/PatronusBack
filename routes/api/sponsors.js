@@ -292,16 +292,32 @@ router.post('/addSportFavorite/:idSponsor', async(req, res) => {
 // editar perfil 
 
 router.put('/profile/:idSponsor', upload.single('logo'), async (req, res) => {
-    // console.log(req.body, req.file);
-    const extension = '.' + req.file.mimetype.split('/')[1];
-    const newName = req.file.filename + extension;
-    const path = req.file.path + extension;
-    fs.renameSync(req.file.path, path);
-    req.body.logo = req.file.path + newName;
+    if(req.file !== undefined) {
+        const extension = '.' + req.file.mimetype.split('/')[1];
+        const newName = req.file.filename + extension;
+        const path = req.file.path + extension;
+        fs.renameSync(req.file.path, path);
+        req.body.logo = 'images/' + newName;
+    }
+    // if(req.body.address === null) {
+    //     req.body.address = "";
+    // };
+    // if(req.body.city === null) {
+    //     req.body.city = "";
+    // };
+    // if(req.body.country === null) {
+    //     req.body.country = "";
+    // };
+    // if(req.body.postalcode === null) {
+    //     req.body.postalcode = "";
+    // };
+    // if(req.body.aboutme === null) {
+    //     req.body.aboutme = "";
+    // };
     try {
         const idSponsor = req.params.idSponsor;
         const sponsorChanged = await editSponsor(idSponsor, req.body);
-        const userChanged = await editUser(idSponsor, req.body);
+        // const userChanged = await editUser(idSponsor, req.body);
         const sponsor = await getById(idSponsor);
         res.json(sponsor);
     } catch (err) {

@@ -57,8 +57,8 @@ const getMySponsors = (idAthlete) => {
 
 // editProfile
 
-const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers }) => {
-        return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, quantitydemand = ?, percentage = ?, limitdate = ?, graphic = ?, followers = ? WHERE id = ?', [name, surname, age, photo, sport, country, quantitydemand, percentage, limitdate, graphic, followers, idAthlete]
+const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country, graphic }) => {
+        return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, graphic = ? WHERE id = ?', [name, surname, age, photo, sport, country, graphic, idAthlete]
     );
 
 }

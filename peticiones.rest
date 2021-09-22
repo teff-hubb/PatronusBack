@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "fila@gmail.com",
+    "email": "heretics@gmail.com",
     "password": "Admin123!"
 }
 
@@ -251,8 +251,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ###
-GET http://localhost:3000/api/sponsors/sportsBySponsor/49
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIzMTUxMSwiY3JlYXRlZF9hdCI6MTYzMjIyNzkxMSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIyNzkxMX0.XLLD35pRQA_BGLxkmLFXjHJNdGQgZQ4T-RdD9k3FLeE
+GET http://localhost:3000/api/sponsors/sportsBySponsor/53
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MywiZXhwaXJlZF9hdCI6MTYzMjMwNDEwOCwiY3JlYXRlZF9hdCI6MTYzMjMwMDUwOCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjMwMDUwOH0.DrUeun23ykv5fjLoNBRoPR_M4N2zjyqARH0Qv_-w660
 
 
 ###
