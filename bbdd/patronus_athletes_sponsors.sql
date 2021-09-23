@@ -1,0 +1,56 @@
+CREATE DATABASE  IF NOT EXISTS `patronus` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `patronus`;
+-- MySQL dump 10.13  Distrib 8.0.12, for macos10.13 (x86_64)
+--
+-- Host: localhost    Database: patronus
+-- ------------------------------------------------------
+-- Server version	8.0.26
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `athletes_sponsors`
+--
+
+DROP TABLE IF EXISTS `athletes_sponsors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `athletes_sponsors` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fk_athletes` int DEFAULT NULL,
+  `fk_sponsors` int DEFAULT NULL,
+  `participations` int DEFAULT NULL,
+  `status` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `athletes_sponsors`
+--
+
+LOCK TABLES `athletes_sponsors` WRITE;
+/*!40000 ALTER TABLE `athletes_sponsors` DISABLE KEYS */;
+INSERT INTO `athletes_sponsors` VALUES (1,49,42,500,0),(2,51,44,200,1),(3,50,47,200,2),(4,54,51,250,1),(6,56,49,100,1),(7,54,45,200,2),(8,59,52,200,1),(9,58,50,300,2),(60,51,46,100,2),(61,49,53,30,1),(62,60,45,200,1),(63,60,48,600,2),(64,60,50,400,2),(65,53,52,100,1),(66,58,47,100,2),(67,49,47,300,1),(68,51,47,500,0),(69,57,47,450,1),(70,60,52,100,1),(71,50,47,300,0);
+/*!40000 ALTER TABLE `athletes_sponsors` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-09-23 11:49:24
