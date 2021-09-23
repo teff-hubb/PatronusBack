@@ -79,14 +79,25 @@ router.get('/mysponsors/:idAthlete', async (req, res) => {
 })
 
 
+router.get('/:idAthlete', async (req, res) => {
+    try {
+        const idAthlete = req.params.idAthlete;
+        const result = await getById(idAthlete);
+        res.json(result);
+    } catch (err) {
+        res.json({error: err.message});
+    }
+});
 
 
 router.post('/createNew/:idAthlete', upload.single('photo'), async(req, res) => {
-    const extension = '.' + req.file.mimetype.split('/')[1];
-    const newName = req.file.filename + extension;
-    const path = req.file.path + extension;
-    fs.renameSync(req.file.path, path);
-    req.body.photo = req.file.path + newName;
+    if(req.file !== undefined) {
+        const extension = '.' + req.file.mimetype.split('/')[1];
+        const newName = req.file.filename + extension;
+        const path = req.file.path + extension;
+        fs.renameSync(req.file.path, path);
+        req.body.photo = 'images/' + newName;
+    }
     try {
         const idAthlete = req.params.idAthlete;
         const result = await createNew(idAthlete, req.body);
@@ -117,16 +128,19 @@ router.put('/rejectOffer/:idOffer', async (req, res) => {
 // editar perfil
 
 router.put('/profile/:idAthlete', upload.single('photo'), async (req, res) => {
-    console.log(req.body, req.file);
-    const extension = '.' + req.file.mimetype.split('/')[1];
-    const newName = req.file.filename + extension;
-    const path = req.file.path + extension;
-    fs.renameSync(req.file.path, path);
-    req.body.photo = 'images/' + newName;
+    console.log('Esto es req.file', req.file);
+    console.log('Esto es req.body', req.body);
+    if(req.file !== undefined) {
+        const extension = '.' + req.file.mimetype.split('/')[1];
+        const newName = req.file.filename + extension;
+        const path = req.file.path + extension;
+        fs.renameSync(req.file.path, path);
+        req.body.photo = 'images/' + newName;
+    }
     try {
         const idAthlete = req.params.idAthlete;
         const athleteChanged = await editDatesAthlete(idAthlete, req.body);
-        const userChanged = await editDatesUser(idAthlete, req.body.email);
+        // const userChanged = await editDatesUser(idAthlete, req.body.email);
         const athlete = await getById(idAthlete);
         res.json(athlete);
     } catch (err) {

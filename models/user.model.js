@@ -95,14 +95,24 @@ const changeStatus = ({fk_athletes, fk_sponsors, participations, status, id}) =>
 // recuperar todas las noticias
 
 const getAthletesNews = () => {
-    return executeQuery('SELECT * FROM patronus.athletes_news',
-    []
-)
+        return executeQuery('SELECT * FROM patronus.athletes_news',
+        []
+    )
+};
+
+
+
+// reset password 
+
+const resetPassword = ({password, email}) => {
+    return executeQuery('UPDATE patronus.users SET password = ? WHERE email = ?',
+    [password, email]
+    )
 };
 
 
 
 
 module.exports = {
-    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor, getAthletesNews
+    getByEmail, changeStatus, createAthlete, createSponsor, registerUser, getByIdAthlete, getByIdSponsor, getAthletesNews, resetPassword
 }

@@ -292,6 +292,8 @@ router.post('/addSportFavorite/:idSponsor', async(req, res) => {
 // editar perfil 
 
 router.put('/profile/:idSponsor', upload.single('logo'), async (req, res) => {
+    console.log('Esto es req.file', req.file);
+    console.log('Esto es req.body', req.body);
     if(req.file !== undefined) {
         const extension = '.' + req.file.mimetype.split('/')[1];
         const newName = req.file.filename + extension;

@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "heretics@gmail.com",
+    "email": "adidas@gmail.com",
     "password": "Admin123!"
 }
 
@@ -169,8 +169,36 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ### 
+POST http://localhost:3000/api/sponsors/addSportFavorite/46
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMjM2MjgyMiwiY3JlYXRlZF9hdCI6MTYzMjM1OTIyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM1OTIyMn0.4tRuZCsITyu62PX2KquwKJZulGrS6Iffu-bVdwzaoKY
+Content-Type: application/json
+
+{
+    "fk_sport": 5
+    
+}
+
+
+### 
+POST http://localhost:3000/api/users/resetPassword
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMjM2MjgyMiwiY3JlYXRlZF9hdCI6MTYzMjM1OTIyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM1OTIyMn0.4tRuZCsITyu62PX2KquwKJZulGrS6Iffu-bVdwzaoKY
+Content-Type: application/json
+
+{
+    "email": "adidas@gmail.com",
+    "password": "Admin1234!"
+    
+}
+
+
+
+
+
+
+
+### 
 GET http://localhost:3000/api/sponsors/myathletes/49
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NSwiZXhwaXJlZF9hdCI6MTYzMjA1Mzc1MywiY3JlYXRlZF9hdCI6MTYzMjA1MDE1MywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjA1MDE1M30.vnYQpw-9lKWYL9sH1gQkZiJrTayHw3xc3ixSemz2KJo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMjM2MjU1MiwiY3JlYXRlZF9hdCI6MTYzMjM1ODk1MiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM1ODk1Mn0.X4fBhjTXQ7V88Q3o5FEpi3xYvm6mv-lpr66tvbUda78
 
 
 ### 

@@ -1,12 +1,14 @@
 const { createToken } = require('../../helpers');
-const { getByEmail, changeStatus, createAthlete, registerUser, createSponsor, getAthletesNews } = require('../../models/user.model');
+const { getByEmail, changeStatus, createAthlete, registerUser, createSponsor, getAthletesNews, resetPassword } = require('../../models/user.model');
 const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 
 const router = require('express').Router();
 
 
-// get
+
+
+// ver noticias
 
 router.get('/news', async (req, res) => {
     const result = await getAthletesNews();
@@ -14,7 +16,9 @@ router.get('/news', async (req, res) => {
 });
 
 
-// register
+
+
+// register athlete
 
 router.post('/register/athlete', 
     // body('name', 'El campo name debe tener una longitud igual o superior a 3 caracteres').exists().isLength({ min: 3 }), 
@@ -43,6 +47,8 @@ router.post('/register/athlete',
 });
 
 
+
+// register sponsor
 
 router.post('/register/sponsor', 
     body('password', 'Dabes incluir un password mayor de 3 caracteres y que contenga, al menos: una mayúscula, una minúscula, un número y un símbolo especial').exists().isLength({ min: 4 }).custom(value => {
@@ -93,6 +99,18 @@ router.post('/login', async (req, res) => {
 });
 
 
+
+// reset password 
+
+router.post('/resetPassword', async (req, res) => {
+    req.body.password = bcrypt.hashSync(req.body.password, 10);
+    const result = await resetPassword(req.body);
+    res.json(result);
+});
+
+
+
+
 // cambiar status oferta
 
 router.put('/offers', async (req, res) => {
@@ -101,11 +119,6 @@ router.put('/offers', async (req, res) => {
 })
 
 
-
-router.get('/news', async (req, res) => {
-    const result = await getAthletesNews();
-    res.json(result);
-});
 
 
 

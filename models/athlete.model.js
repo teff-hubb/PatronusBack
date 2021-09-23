@@ -57,8 +57,8 @@ const getMySponsors = (idAthlete) => {
 
 // editProfile
 
-const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country, graphic }) => {
-        return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ?, graphic = ? WHERE id = ?', [name, surname, age, photo, sport, country, graphic, idAthlete]
+const editDatesAthlete = (idAthlete, { name, surname, age, photo, sport, country }) => {
+        return executeQuery('UPDATE patronus.athletes SET name = ?, surname = ?, age = ?, photo = ?, sport = ?, country = ? WHERE id = ?', [name, surname, age, photo, sport, country, idAthlete]
     );
 
 }
@@ -115,9 +115,9 @@ const updatePercentage = (percentageTotal, fk_athlete) => {
 
 // crear noticia 
 
-const createNew = (fk_athletes, {summary, photo, username}) => {
-        return executeQuery('INSERT INTO patronus.athletes_news (fk_athletes, username, summary, photo) VALUES (?, ?, ?, ?)',
-        [fk_athletes, username, summary, photo]
+const createNew = (fk_athletes, {username, summary, photo, date}) => {
+        return executeQuery('INSERT INTO patronus.athletes_news (fk_athletes, username, summary, photo, date) VALUES (?, ?, ?, ?, ?)',
+        [fk_athletes, username, summary, photo, date]
     )   
 };
 
