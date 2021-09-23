@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "adidas@gmail.com",
+    "email": "billabong@gmail.com",
     "password": "Admin123!"
 }
 
@@ -169,12 +169,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ### 
-POST http://localhost:3000/api/sponsors/addSportFavorite/46
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NiwiZXhwaXJlZF9hdCI6MTYzMjM2MjgyMiwiY3JlYXRlZF9hdCI6MTYzMjM1OTIyMiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM1OTIyMn0.4tRuZCsITyu62PX2KquwKJZulGrS6Iffu-bVdwzaoKY
+POST http://localhost:3000/api/sponsors/addSportFavorite/60
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NywiZXhwaXJlZF9hdCI6MTYzMjM4ODA4MCwiY3JlYXRlZF9hdCI6MTYzMjM4NDQ4MCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM4NDQ4MH0.HHdtX7tBAhFrVZMwhv9J6FjehkFwaMR0IHDtZR2rhwY
 Content-Type: application/json
 
 {
-    "fk_sport": 5
+    "fk_sport": 4
     
 }
 
@@ -253,13 +253,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ###
-POST http://localhost:3000/api/sponsors/addAthleteFavorite/49
+POST http://localhost:3000/api/sponsors/addAthleteFavorite/49/60
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjE3OTQwNywiY3JlYXRlZF9hdCI6MTYzMjE3NTgwNywidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjE3NTgwN30.kmd1ZcZE_5vWnCiZEOifa6DTY8ofSOHQkGmmCIOlkCo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NywiZXhwaXJlZF9hdCI6MTYzMjM4OTIxNSwiY3JlYXRlZF9hdCI6MTYzMjM4NTYxNSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM4NTYxNX0.4DU9v_kmoad0jVDv5tX81hcc4_7bxWln-nM7Do-QnVw
 
-{
-    "fk_sponsors": 51
-}
 
 
 ###
@@ -296,7 +293,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 ###
 POST http://localhost:3000/api/sponsors/send-email
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJlZF9hdCI6MTYzMjIyMTE2MSwiY3JlYXRlZF9hdCI6MTYzMjIxNzU2MSwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjIxNzU2MX0.sMCE-Y9OzLhOSnqWkblI_DiwlUbXK3f35e8RyxcTBH4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NywiZXhwaXJlZF9hdCI6MTYzMjM5MjM2NCwiY3JlYXRlZF9hdCI6MTYzMjM4ODc2NCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM4ODc2NH0.Qse1HChsy3wyhA_fr_Q2W_813P1btWoc2KXYqWMCtQQ
 
 
 

@@ -12,12 +12,12 @@ const nodemailer = require("nodemailer");
 
 router.post("/send-email", (req, res) => {
     let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {
-            user: "dedric.moen56@ethereal.email",
-            pass: "79VFVym4kFZdjcj4Sk"
+            user: "patronus.spain@gmail.com",
+            pass: "Admin123!"
         }
     });
     
@@ -25,7 +25,7 @@ router.post("/send-email", (req, res) => {
         from: "Patronus",
         to: "patronus.spain@gmail.com",
         subject: "Enviado desde nodemailer",
-        text: "Hola Mundo!"
+        text: "http://localhost:4200/reset-pass"
     }
     
     
@@ -260,10 +260,11 @@ router.post('/newOffer/:idSponsor', async (req, res) => {
 
 // añadir favorito 
 
-router.post('/addAthleteFavorite/:idAthlete', async(req, res) => {
+router.post('/addAthleteFavorite/:idAthlete/:idSponsor', async(req, res) => {
     try {
         const idAthlete = req.params.idAthlete;
-        const result = await addAthleteFavorite(idAthlete, req.body);
+        const idSponsor = req.params.idSponsor;
+        const result = await addAthleteFavorite(idAthlete, idSponsor);
         res.json(result);
     } catch (err) {
         res.json({error: err.message});

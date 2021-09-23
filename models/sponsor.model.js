@@ -195,7 +195,7 @@ const addSportFavorite = (fk_sponsors, {fk_sport}) => {
 
 // añadir atleta favorito 
 
-const addAthleteFavorite = (fk_athletes,  {fk_sponsors}) => {
+const addAthleteFavorite = (fk_athletes,  fk_sponsors) => {
         return executeQuery('INSERT INTO patronus.favorites (fk_athletes, fk_sponsors, favorite) VALUES (?, ?, 1)',
         [fk_athletes, fk_sponsors]
     );
