@@ -102,7 +102,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "billabong@gmail.com",
+    "email": "kappa@gmail.com",
     "password": "Admin123!"
 }
 
@@ -292,10 +292,33 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MiwiZXhwaXJl
 
 
 ###
-POST http://localhost:3000/api/sponsors/send-email
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NywiZXhwaXJlZF9hdCI6MTYzMjM5MjM2NCwiY3JlYXRlZF9hdCI6MTYzMjM4ODc2NCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjM4ODc2NH0.Qse1HChsy3wyhA_fr_Q2W_813P1btWoc2KXYqWMCtQQ
+POST http://localhost:3000/api/sponsors/send-email/51
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0NywiZXhwaXJlZF9hdCI6MTYzMjQwODAxMCwiY3JlYXRlZF9hdCI6MTYzMjQwNDQxMCwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjQwNDQxMH0.ktfQQKKxllb9e8keH_57evKELBFIk4QBaNRCXBr1tkk
+Content-Type: application/json
+
+{
+    "email": "kappa@gmail.com"
+}
 
 
+
+###
+GET http://localhost:3000/api/sponsors/email/51
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MSwiZXhwaXJlZF9hdCI6MTYzMjQyNzA1NiwiY3JlYXRlZF9hdCI6MTYzMjQyMzQ1NiwidXNlcl9yb2xlIjoiUyIsImlhdCI6MTYzMjQyMzQ1Nn0.R-bJs6KPCbr2vKFJPKRSrOySmHxj3RC7x_UZiIA5wE0
+Content-Type: application/json
+
+
+
+
+
+###
+POST http://localhost:3000/api/athletes/send-email/50
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1MCwiZXhwaXJlZF9hdCI6MTYzMjQwOTMxNCwiY3JlYXRlZF9hdCI6MTYzMjQwNTcxNCwidXNlcl9yb2xlIjoiQSIsImlhdCI6MTYzMjQwNTcxNH0.REy23ZyWhBLUdEL2kxGnVaLx3rOzyB0WLZypG5wyI2E
+Content-Type: application/json
+
+{
+    "email": "miryam@gmail.com"
+}
 
 
 

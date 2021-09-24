@@ -220,10 +220,23 @@ const getMyAthletesFavorites = (fk_sponsors) => {
 }
 
 
+// const getSponsorExists = (fk_sponsor, { email }) => {
+//         return executeQuery('SELECT * FROM patronus.users WHERE email = ? AND fk_sponsor = ?',
+//         [email, fk_sponsor]
+//     )
+// };
+
+
+
+const getEmailSponsor = (fk_athlete) => {
+        return executeQuery('SELECT email FROM patronus.users WHERE fk_sponsor = ?',
+        [fk_athlete]
+    );
+}
 
 
 
 module.exports = {
-    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addAthleteFavorite, getMyAthletesFavorites, getSportsSponsors, getFavoriteSportsSponsors, addSportFavorite
+    getMyAthletes, getMyAllOffers, getMyOffersRejecteds, editSponsor, getById, offerById, deleteAccount, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getAthletesByCountry, getAthletesBySport, getInvertible, getCountries, getSports, getNoInvertibles, addAthleteFavorite, getMyAthletesFavorites, getSportsSponsors, getFavoriteSportsSponsors, addSportFavorite, getEmailSponsor
 
 }
