@@ -1,5 +1,5 @@
 const { totalParticipations, updateParticipations, updatePercentage } = require('../../models/athlete.model');
-const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, getSportsSponsors, getFavoriteSportsSponsors, addAthleteFavorite, addSportFavorite, getMyAthletesFavorites } = require('../../models/sponsor.model');
+const { getMyAthletes, getMyAllOffers, getMyOffersRejecteds, offerById, deleteAccount, editSponsor, editUser, getAll, getAthleteById, orderByPercentage, orderByLimitdate, newOffer, getById, getInvertible, getAthletesBySport, getAthletesByCountry, getCountries, getSports, getNoInvertibles, getSportsSponsors, getFavoriteSportsSponsors, addAthleteFavorite, addSportFavorite, getMyAthletesFavorites, getIdSponsorByEmail, getSponsorExists, getEmailSponsor } = require('../../models/sponsor.model');
 
 const router = require('express').Router();
 
@@ -8,38 +8,6 @@ const multer = require('multer');
 const upload = multer({ dest: 'public/images' });
 
 const nodemailer = require("nodemailer");
-
-
-router.post("/send-email", (req, res) => {
-    let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
-        auth: {
-            user: "patronus.spain@gmail.com",
-            pass: "Admin123!"
-        }
-    });
-    
-    let mailOptions = {
-        from: "Patronus",
-        to: "patronus.spain@gmail.com",
-        subject: "Enviado desde nodemailer",
-        text: "http://localhost:4200/reset-pass"
-    }
-    
-    
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
-            res.status(500).send(error.message);
-        } else {
-            console.log("Email enviado.");
-            res.status(200).jsonp(req.body);
-        }
-    })
-});
-
-
 
 
 // todos los deportistas
@@ -174,8 +142,6 @@ router.get('/athletes/noInvertibles', async (req, res) => {
 
 
 
-
-
 // ver un atleta 
 
 router.get('/athletes/:idAthlete', async (req, res) => {
@@ -223,6 +189,16 @@ router.get('/sportsBySponsor/:idSponsor', async (req, res) => {
     const result = await getFavoriteSportsSponsors(idSponsor);
     res.json(result);
 })
+
+
+// email del sponsor 
+
+router.get('/email/:idSponsor', async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const result = await getEmailSponsor(idSponsor);
+    res.json(result);
+    console.log(result);
+});
 
 
 
@@ -320,12 +296,48 @@ router.put('/profile/:idSponsor', upload.single('logo'), async (req, res) => {
     try {
         const idSponsor = req.params.idSponsor;
         const sponsorChanged = await editSponsor(idSponsor, req.body);
-        // const userChanged = await editUser(idSponsor, req.body);
+        const userChanged = await editUser(idSponsor, req.body);
         const sponsor = await getById(idSponsor);
         res.json(sponsor);
     } catch (err) {
         res.json({error: err.message});
     }
+});
+
+
+// enviar email para reset contraseña
+
+router.post("/send-email/:idSponsor", async (req, res) => {
+    const idSponsor = req.params.idSponsor;
+    const emailSponsor = await getEmailSponsor(idSponsor, req.body);
+    if (emailSponsor === req.body.email) {
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
+            auth: {
+                user: "patronus.spain@gmail.com",
+                pass: "Admin123!"
+            }
+        });
+        
+        let mailOptions = {
+            from: "Patronus",
+            to: req.body.email,
+            subject: "Enviado desde nodemailer",
+            text: "http://localhost:4200/reset-pass"
+        }
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+            if(error) {
+                res.status(500).send(error.message);
+            } else {
+                console.log("Email enviado.");
+                res.status(200).jsonp(req.body);
+            }
+        })
+    };
+
 });
 
 

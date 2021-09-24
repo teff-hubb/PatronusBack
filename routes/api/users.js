@@ -5,9 +5,6 @@ const { body, validationResult } = require('express-validator');
 
 const router = require('express').Router();
 
-
-
-
 // ver noticias
 
 router.get('/news', async (req, res) => {
@@ -97,6 +94,8 @@ router.post('/login', async (req, res) => {
         res.json ({error: 'Error en usuario y/o contraseña - (es la contraseña)'})
     }
 });
+
+
 
 
 

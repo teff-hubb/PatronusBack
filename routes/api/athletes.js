@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-const { getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, deleteAccount, editDatesAthlete, editDatesUser, acceptOffer, rejectOffer, createNew } = require('../../models/athlete.model');
+const { getById, getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, deleteAccount, editDatesAthlete, editDatesUser, acceptOffer, rejectOffer, createNew, getAthleteExists } = require('../../models/athlete.model');
 const { route } = require('./sponsors');
 
 
@@ -10,6 +10,7 @@ const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'public/images' });
 
+const nodemailer = require("nodemailer");
 
 
 
@@ -148,6 +149,41 @@ router.put('/profile/:idAthlete', upload.single('photo'), async (req, res) => {
     }
 })
 
+
+// enviar email para reset contraseña
+
+router.post("/send-email/:idAthlete", async (req, res) => {
+    const idAthlete = req.params.idAthlete;
+    const user = await getAthleteExists(idAthlete, req.body);
+    if (user !== []) {
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
+            auth: {
+                user: "patronus.spain@gmail.com",
+                pass: "Admin123!"
+            }
+        });
+        
+        let mailOptions = {
+            from: "Patronus",
+            to: req.body.email,
+            subject: "Enviado desde nodemailer",
+            text: "http://localhost:4200/reset-pass"
+        }
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+            if(error) {
+                res.status(500).send(error.message);
+            } else {
+                console.log("Email enviado.");
+                res.status(200).jsonp(req.body);
+            }
+        })
+    };
+
+});
 
 
 router.put('/deleteAccount/:idAthlete', async (req, res) => {

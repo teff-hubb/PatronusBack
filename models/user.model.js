@@ -60,6 +60,7 @@ const getByEmail = (email) => {
     );
 };
 
+
 const getByIdAthlete = (idAthlete) => {
     return executeUniqueQuery('SELECT * FROM users WHERE fk_athlete = ?',
     [idAthlete])

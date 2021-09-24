@@ -5,9 +5,6 @@
 const { executeQuery, executeUniqueQuery } = require("../helpers");
 
 
-// getAll
-
-
 
 // getById 
 
@@ -123,6 +120,11 @@ const createNew = (fk_athletes, {username, summary, photo, date}) => {
 
 
 
+const getAthleteExists = (fk_sponsor, { email }) => {
+    return executeQuery('SELECT * FROM patronus.users WHERE email = ? AND fk_sponsor = ?',
+    [email, fk_sponsor]
+)
+};
 
 // darse de baja
 
@@ -134,5 +136,5 @@ const deleteAccount = (idAthlete) => {
 
 
 module.exports = {
-    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer, updatePercentage, rejectOffer, createNew
+    getAllOffers, getOffersWaiting, getOffersRejecteds, getMySponsors, editDatesAthlete, getById, totalParticipations, deleteAccount, editDatesUser, updateParticipations, acceptOffer, updatePercentage, rejectOffer, createNew, getAthleteExists
 }
